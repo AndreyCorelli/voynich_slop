@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "languages": [
+    "latin",
+    "swabian"
+  ],
+  "profiles": [
+    "letters",
+    "mixed"
+  ],
+  "methods": [
+    "ordinary",
+    "guided"
+  ],
+  "vocabulary_size": 12,
+  "max_word_spelling_length": 3,
+  "latin_start_projected_offset": 64,
+  "swabian_start_projected_offset": 0,
+  "minimum_train_words": 4,
+  "maximum_train_words": 48,
+  "holdout_words": 4,
+  "beam_width": 16,
+  "max_attempts": 3,
+  "total_solver_budget_ms_per_arm": 5000,
+  "key_seed": 1414,
+  "holdout_choice_seed": 1515,
+  "shuffle_seed": 1616,
+  "rules": {
+    "latin": [
+      {
+        "id": "et",
+        "expansion": "et",
+        "position": "whole",
+        "source_url": "https://hmmlschool.org/latin-gothic-transcription/",
+        "evidence": "Tironian et whole-word sign; exact mark shapes and usage probabilities not modeled."
+      }
+    ],
+    "swabian": [
+      {
+        "id": "in",
+        "expansion": "in",
+        "position": "whole",
+        "source_url": "https://www.adfontes.uzh.ch/tutorium/schriften-lesen/abkuerzungen",
+        "evidence": "Nasal mark supplies n/m after a written letter. Dedicated in unit is a narrow modeling inference, not an attested cipher unit or transcription of this source."
+      }
+    ]
+  },
+  "limitations": "Projected short-word sequences; within-source half split, engineered training homophone coverage. One positive per language/generation profile and a paired shuffle. Both recovery profiles applied to every ciphertext; same solver budgets, differing proposal algorithms. No historical cipher reconstruction or significance estimates. Mixed uses optional distinct reversible contraction units, generation uses shortest tokenization.",
+  "contraction_activity": "Required in training only; holdout use audited, not required"
+}

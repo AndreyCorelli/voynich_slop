@@ -1,0 +1,32 @@
+"""Long-context source calibration with exhaustive candidate-omission negatives."""
+from benchmarks.grammar_initial_context_iteration107 import *
+from voynich_smt.volume_repair_gate import route,select_conditional,evaluate as evaluate109
+from voynich_smt.omission_aware_gate import calibrate as calibrate111
+from voynich_smt.combined_repair_gate import evaluate as evaluate_source
+OUT=ROOT/'iteration111';PREVIOUS=ROOT/'iteration107';SOURCE=ROOT/'iteration110';OLD=ROOT/'iteration109'
+
+
+def run():
+    assert not OUT.exists();OUT.mkdir();(OUT/'proposal-design.md').write_text(Path('docs/grammar_algorithm_proposals.md').read_text())
+    paths=[Path(__file__),Path('src/voynich_smt/omission_aware_gate.py'),Path('src/voynich_smt/volume_repair_gate.py'),Path('src/voynich_smt/combined_repair_gate.py'),SOURCE/'verification-manifest.json',SOURCE/'cases.json',OLD/'verification-manifest.json',OLD/'policies.json',OLD/'routing.json',PREVIOUS/'verification-manifest.json',PREVIOUS/'pair-cases.json',PREVIOUS/'evaluation.json',ROOT/'iteration105/reference-rows.json',BASE/'models.json',ROOT/'iteration89/models.json']
+    save(OUT/'design-freeze.json',dict(inputs={str(p):digest(p) for p in paths},design='SOURCE-ONLY long-rule recalibration with110ALL67complete+1072omissioncases=1139, no model/score/contextchange. Gainallattainableunique-topnonnegative110gains+0; SAME gaps0,.1,.25,.5,1 andstabilities.5,.75,.9,.95,.99,1. Requirecomplete>=10calls ANDomissioncalls on>=20DISTINCToriginalerrorcaseIDs, not20correlatedviews;>=90percentprecisionSEPARATELYcomplete/omission, zero clean/sameclasswrong andzero unavailablewrong inBOTH. Maxcompletehits,then distinctomissionhits,thenminwrong,smallergap,smallerstability,highergain; OFFifnone. Keep109shortOFF androuting≤100/≥829/OFFbetween unchanged. Reusedsourcecalnegativeaugmentation,NOTindependentvalidation or109originalguardpassing. FreezeallpoliciesBEFORE107authorfeatures/publics. ALL201authorcases/all64errors+controls, fullunavailable/affected/zeroaffectedstrata. ApplyEVERYrecommendationblindlyusingcontextassignments ononlyoriginal100prefix, fixed85/89PP; samepositionOLD109cachethen107fallbackornewfixedinference. No reciprocalendpointgate/wordexception/authorpickedthresholds/newannotations/reserve/sealedtest/nuclei. Keep109highercoverage finding andreporttradeoff, wrongactions andgrossPPdamage. Omissionbankisrepairpoolavailabilityonly, contexttokensremainvisible.'))
+    source=load(SOURCE/'cases.json');chosen,curve=calibrate111(source);bands=load(OLD/'routing.json');policies=dict(load(OLD/'policies.json'),full=chosen['policy']);save(OUT/'chosen.json',chosen);save(OUT/'calibration-curve.json',curve);save(OUT/'policies.json',policies);save(OUT/'routing.json',bands);save(OUT/'policy-freeze.json',dict(inputs={str(p):digest(p) for p in [OUT/'policies.json',OUT/'chosen.json',OUT/'routing.json',OUT/'calibration-curve.json',SOURCE/'cases.json']}));save(OUT/'calibration-summary.json',evaluate_source(source,chosen['policy']));print('CHOSEN',chosen,flush=True)
+    # Target data is loaded after policy freeze, even when the policy is OFF.
+    publics={v:load(PREVIOUS/('public-'+v+'.json')) for v in ['base','civil','expanded']};targets=[dict(c,context_sentences=len(publics[c['block']])) for c in load(PREVIOUS/'pair-cases.json')];actions={c['block']+'/'+c['case']:select_conditional(c['features'],c['context_sentences'],policies,bands) for c in targets};save(OUT/'actions.json',actions);save(OUT/'pair-summary.json',evaluate109(targets,policies,bands));save(OUT/'routes.json',{v:dict(sentences=len(p),route=route(len(p),bands)) for v,p in publics.items()});public=publics['base'];labels=load(ROOT/'iteration105/reference-rows.json');anchors=load(ROOT/'iteration85/anchor-budgets.json')['195'];bank=load(ROOT/'iteration98/calibration-bank.json');models={'original':load(BASE/'models.json'),'augmented':load(ROOT/'iteration89/models.json')};store=OUT/'pp-cache';store.mkdir();cache={};sources={}
+    def predictions(view):
+        sig=signature(view)
+        if sig not in cache:
+            path=OLD/'pp-cache'/(sig+'.json')
+            if not path.exists():path=PREVIOUS/'pp-cache'/(sig+'.json')
+            if path.exists():payload=load(path);assert apply_delta(public,payload['delta'])==view;sources[sig]=str(path)
+            else:payload=dict(delta=delta_public(public,view),scores={a:compact(infer85(query_rows(view,labels),m)) for a,m in models.items()});sources[sig]='new'
+            dest=store/(sig+'.json');save(dest,payload);save(store/(sig+'.freeze.json'),dict(inputs={str(dest):digest(dest)}));cache[sig]={a:expand(labels,s) for a,s in payload['scores'].items()}
+        return sig,cache[sig]
+    clean_sig,clean=predictions(public);transforms={}
+    for c in targets:
+        key=c['block']+'/'+c['case'];context=perturb(publics[c['block']],bank[c['case']],anchors);before_public=context[:100];before_sig,_=predictions(before_public);after_public=repair_prefix(before_public,context,actions[key]);after_sig,_=predictions(after_public);transforms[key]=dict(before=before_sig,after=after_sig,pair=actions[key],changed_tokens=sum(x!=y for s,t in zip(before_public,after_public) for x,y in zip(s['tokens'],t['tokens'])))
+    save(OUT/'transforms.json',transforms);save(OUT/'cache-sources.json',sources);save(OUT/'predictions-freeze.json',dict(inputs={str(p):digest(p) for p in [OUT/'actions.json',OUT/'transforms.json',OUT/'cache-sources.json']+list(store.glob('*.json'))}));evaluation={}
+    for c in targets:
+        key=c['block']+'/'+c['case'];t=transforms[key];before=cache[t['before']];after=cache[t['after']];pair=t['pair'];hit=pair is not None and pair==c['reference']['pair'];evaluation[key]=dict(pair=dict(selected=pair,hit=int(hit),wrong=int(pair is not None and not hit),abstain=pair is None,reference_supported=c['reference']['supported']),changed_tokens=t['changed_tokens'],scored_affected_tokens=c['scored_affected_tokens'],public_equals_clean=t['after']==clean_sig,pp={a:{name:dict(effect(after[a],before[a],clean[a],cut),maximum_probability_difference_from_clean=max(abs(x['scores']['pooled_pos']['pp']-y['scores']['pooled_pos']['pp']) for x,y in zip(after[a],clean[a]))) for name,cut in cuts.items()} for a,cuts in PP_SETTINGS.items()})
+    save(OUT/'evaluation.json',evaluation);save(OUT/'run-summary.json',dict(cases=len(evaluation),unique_pp_inputs=len(cache),new_pp_inputs=sum(s=='new' for s in sources.values()),fixed_scored_sentences=100,fixed_scored_tokens=1514));print(load(OUT/'pair-summary.json'),flush=True)
+if __name__=='__main__':run()

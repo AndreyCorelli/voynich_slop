@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "inventory_version": 1,
+  "semantics": "Distinct reversible plaintext units, not ambiguous scribal marks or inferred manuscript usage. Applications optional and non-overlapping; spelling and word boundaries preserved.",
+  "rules": [
+    {"id": "ae", "expansion": "ae", "position": "any", "type": "ligature", "source_url": "https://hmmlschool.org/latin-insular-transcription/", "evidence": "The ae ligature is explicitly distinguished from abbreviation; source examples are early medieval."},
+    {"id": "per", "expansion": "per", "position": "any", "type": "abbreviation", "source_url": "https://hmmlschool.org/latin-caroline-transcription/", "evidence": "A marked p represents per, including the syllable within longer words."},
+    {"id": "pro", "expansion": "pro", "position": "any", "type": "abbreviation", "source_url": "https://hmmlschool.org/latin-gothic-transcription/", "evidence": "A distinct marked p represents pro, including within longer words."},
+    {"id": "con", "expansion": "con", "position": "initial", "type": "abbreviation", "source_url": "https://hmmlschool.org/latin-insular-transcription/", "evidence": "Backwards c represents con; pilot restricted to word-initial con. Source examples are early medieval."},
+    {"id": "et", "expansion": "et", "position": "whole", "type": "word-sign", "source_url": "https://hmmlschool.org/latin-gothic-transcription/", "evidence": "Gothic Tironian et is a whole-word sign."},
+    {"id": "est", "expansion": "est", "position": "whole", "type": "word-sign", "source_url": "https://hmmlschool.org/latin-insular-transcription/", "evidence": "A division-like sign represents est; source examples are early medieval."},
+    {"id": "rum", "expansion": "rum", "position": "final", "type": "abbreviation", "source_url": "https://hmmlschool.org/latin-gothic-transcription/", "evidence": "A 2-shaped r with a stroke denotes omitted final um, modeled as one distinct unit expanding to rum."}
+  ],
+  "profiles": {"letters": [], "ae-only": ["ae"], "bounded-seven": ["ae", "per", "pro", "con", "et", "est", "rum"]},
+  "limitations": ["A fixed mixed-period sensitivity inventory, not a reconstructed fifteenth-century cipher key or a diplomatic transcription.", "Distinct expansion labels intentionally avoid historical mark ambiguity; con is not merged with cum.", "Full application gives a compression envelope, not observed usage frequencies.", "ae is modeled as a dedicated unit, not conflated with German ä or plain e."]
+}

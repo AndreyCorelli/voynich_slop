@@ -1,0 +1,6 @@
+{
+  "source_report": "experiments/results/cycle-performance.json",
+  "seed": 7,
+  "word_counts": [1, 2, 4, 6, 8, 11],
+  "timeout_ms": 30000
+}

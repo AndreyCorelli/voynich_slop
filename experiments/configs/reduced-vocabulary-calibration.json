@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "vocabulary_sizes": [64, 128, 256],
+  "training_sizes": [5, 10, 15],
+  "distractor_seed": 1729,
+  "timeout_ms": 10000,
+  "selection": "All 49 distinct expanded words in the fixed 52-word synthetic passage plus nested seeded distractors from the full corrected Latin dictionary.",
+  "scope": "Truth-assisted vocabulary construction includes continuation spellings. This is a deliberately easier diagnostic, not blind recovery, full-vocabulary calibration or language evidence. Full alphabet, generating key, cipher bounds, training prefixes and original continuation remain fixed.",
+  "stopping_rule": "Nine short fits only; checkpoint each result. UNKNOWN has no predictive score. No seed search, added budgets, key repair, or Voynich fitting."
+}

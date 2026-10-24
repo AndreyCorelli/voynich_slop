@@ -1,0 +1,8 @@
+{
+  "public_inputs": [
+    "data/generated/synthetic-prefix/inputs/seed-7-words-04.json",
+    "data/generated/cycle-performance/inputs/seed-7-vocab-5665-state.json"
+  ],
+  "branch_timeout_ms": 10000,
+  "max_branches": 12
+}

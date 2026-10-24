@@ -1,0 +1,5 @@
+{
+  "source_report": "experiments/results/learned-search.json",
+  "timeout_ms": 120000,
+  "dictionary_encoding": "trie"
+}

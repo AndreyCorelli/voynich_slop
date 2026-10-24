@@ -1,0 +1,847 @@
+{
+  "status": "reserved; no model features, scores or predictions evaluated",
+  "reference_version": "predicate-complex-v1",
+  "selection": "first 100 undeclared retained sentences per author at or beyond position 700",
+  "authors": {
+    "Jerome": [
+      {
+        "retained_position": 700,
+        "sent_id": "13534"
+      },
+      {
+        "retained_position": 701,
+        "sent_id": "13535"
+      },
+      {
+        "retained_position": 702,
+        "sent_id": "13536"
+      },
+      {
+        "retained_position": 703,
+        "sent_id": "13537"
+      },
+      {
+        "retained_position": 704,
+        "sent_id": "13538"
+      },
+      {
+        "retained_position": 705,
+        "sent_id": "13539"
+      },
+      {
+        "retained_position": 706,
+        "sent_id": "13540"
+      },
+      {
+        "retained_position": 707,
+        "sent_id": "13541"
+      },
+      {
+        "retained_position": 708,
+        "sent_id": "13542"
+      },
+      {
+        "retained_position": 709,
+        "sent_id": "13543"
+      },
+      {
+        "retained_position": 710,
+        "sent_id": "13544"
+      },
+      {
+        "retained_position": 711,
+        "sent_id": "13545"
+      },
+      {
+        "retained_position": 712,
+        "sent_id": "13546"
+      },
+      {
+        "retained_position": 713,
+        "sent_id": "13547"
+      },
+      {
+        "retained_position": 714,
+        "sent_id": "13548"
+      },
+      {
+        "retained_position": 715,
+        "sent_id": "13549"
+      },
+      {
+        "retained_position": 716,
+        "sent_id": "13550"
+      },
+      {
+        "retained_position": 717,
+        "sent_id": "13551"
+      },
+      {
+        "retained_position": 718,
+        "sent_id": "13552"
+      },
+      {
+        "retained_position": 719,
+        "sent_id": "13553"
+      },
+      {
+        "retained_position": 720,
+        "sent_id": "13554"
+      },
+      {
+        "retained_position": 721,
+        "sent_id": "13555"
+      },
+      {
+        "retained_position": 722,
+        "sent_id": "13556"
+      },
+      {
+        "retained_position": 723,
+        "sent_id": "13557"
+      },
+      {
+        "retained_position": 724,
+        "sent_id": "13558"
+      },
+      {
+        "retained_position": 725,
+        "sent_id": "13559"
+      },
+      {
+        "retained_position": 726,
+        "sent_id": "13560"
+      },
+      {
+        "retained_position": 727,
+        "sent_id": "13561"
+      },
+      {
+        "retained_position": 728,
+        "sent_id": "47535"
+      },
+      {
+        "retained_position": 729,
+        "sent_id": "47536"
+      },
+      {
+        "retained_position": 730,
+        "sent_id": "13563"
+      },
+      {
+        "retained_position": 731,
+        "sent_id": "13564"
+      },
+      {
+        "retained_position": 732,
+        "sent_id": "13565"
+      },
+      {
+        "retained_position": 733,
+        "sent_id": "13566"
+      },
+      {
+        "retained_position": 734,
+        "sent_id": "13567"
+      },
+      {
+        "retained_position": 735,
+        "sent_id": "13568"
+      },
+      {
+        "retained_position": 736,
+        "sent_id": "13569"
+      },
+      {
+        "retained_position": 737,
+        "sent_id": "13570"
+      },
+      {
+        "retained_position": 738,
+        "sent_id": "13571"
+      },
+      {
+        "retained_position": 739,
+        "sent_id": "13572"
+      },
+      {
+        "retained_position": 740,
+        "sent_id": "13573"
+      },
+      {
+        "retained_position": 741,
+        "sent_id": "13574"
+      },
+      {
+        "retained_position": 742,
+        "sent_id": "13575"
+      },
+      {
+        "retained_position": 743,
+        "sent_id": "13576"
+      },
+      {
+        "retained_position": 744,
+        "sent_id": "13577"
+      },
+      {
+        "retained_position": 745,
+        "sent_id": "13578"
+      },
+      {
+        "retained_position": 746,
+        "sent_id": "13579"
+      },
+      {
+        "retained_position": 747,
+        "sent_id": "13580"
+      },
+      {
+        "retained_position": 748,
+        "sent_id": "13581"
+      },
+      {
+        "retained_position": 749,
+        "sent_id": "13582"
+      },
+      {
+        "retained_position": 750,
+        "sent_id": "13583"
+      },
+      {
+        "retained_position": 751,
+        "sent_id": "13584"
+      },
+      {
+        "retained_position": 752,
+        "sent_id": "13585"
+      },
+      {
+        "retained_position": 753,
+        "sent_id": "13586"
+      },
+      {
+        "retained_position": 754,
+        "sent_id": "13587"
+      },
+      {
+        "retained_position": 755,
+        "sent_id": "13588"
+      },
+      {
+        "retained_position": 756,
+        "sent_id": "13589"
+      },
+      {
+        "retained_position": 757,
+        "sent_id": "13590"
+      },
+      {
+        "retained_position": 758,
+        "sent_id": "13591"
+      },
+      {
+        "retained_position": 759,
+        "sent_id": "13592"
+      },
+      {
+        "retained_position": 760,
+        "sent_id": "13593"
+      },
+      {
+        "retained_position": 761,
+        "sent_id": "13594"
+      },
+      {
+        "retained_position": 762,
+        "sent_id": "13595"
+      },
+      {
+        "retained_position": 763,
+        "sent_id": "13596"
+      },
+      {
+        "retained_position": 764,
+        "sent_id": "13597"
+      },
+      {
+        "retained_position": 765,
+        "sent_id": "13598"
+      },
+      {
+        "retained_position": 766,
+        "sent_id": "13599"
+      },
+      {
+        "retained_position": 767,
+        "sent_id": "13600"
+      },
+      {
+        "retained_position": 768,
+        "sent_id": "13601"
+      },
+      {
+        "retained_position": 769,
+        "sent_id": "13602"
+      },
+      {
+        "retained_position": 770,
+        "sent_id": "13603"
+      },
+      {
+        "retained_position": 771,
+        "sent_id": "13604"
+      },
+      {
+        "retained_position": 772,
+        "sent_id": "13605"
+      },
+      {
+        "retained_position": 773,
+        "sent_id": "13606"
+      },
+      {
+        "retained_position": 774,
+        "sent_id": "47537"
+      },
+      {
+        "retained_position": 775,
+        "sent_id": "47538"
+      },
+      {
+        "retained_position": 776,
+        "sent_id": "13608"
+      },
+      {
+        "retained_position": 777,
+        "sent_id": "13609"
+      },
+      {
+        "retained_position": 778,
+        "sent_id": "13610"
+      },
+      {
+        "retained_position": 779,
+        "sent_id": "13611"
+      },
+      {
+        "retained_position": 780,
+        "sent_id": "13612"
+      },
+      {
+        "retained_position": 781,
+        "sent_id": "13613"
+      },
+      {
+        "retained_position": 782,
+        "sent_id": "13614"
+      },
+      {
+        "retained_position": 783,
+        "sent_id": "13615"
+      },
+      {
+        "retained_position": 784,
+        "sent_id": "13616"
+      },
+      {
+        "retained_position": 785,
+        "sent_id": "13617"
+      },
+      {
+        "retained_position": 786,
+        "sent_id": "13618"
+      },
+      {
+        "retained_position": 787,
+        "sent_id": "13619"
+      },
+      {
+        "retained_position": 788,
+        "sent_id": "13620"
+      },
+      {
+        "retained_position": 789,
+        "sent_id": "13621"
+      },
+      {
+        "retained_position": 790,
+        "sent_id": "13622"
+      },
+      {
+        "retained_position": 791,
+        "sent_id": "13623"
+      },
+      {
+        "retained_position": 792,
+        "sent_id": "13625"
+      },
+      {
+        "retained_position": 793,
+        "sent_id": "13626"
+      },
+      {
+        "retained_position": 794,
+        "sent_id": "13627"
+      },
+      {
+        "retained_position": 795,
+        "sent_id": "13628"
+      },
+      {
+        "retained_position": 796,
+        "sent_id": "13629"
+      },
+      {
+        "retained_position": 797,
+        "sent_id": "13630"
+      },
+      {
+        "retained_position": 798,
+        "sent_id": "13631"
+      },
+      {
+        "retained_position": 799,
+        "sent_id": "13632"
+      }
+    ],
+    "Palladius": [
+      {
+        "retained_position": 700,
+        "sent_id": "160489"
+      },
+      {
+        "retained_position": 701,
+        "sent_id": "160490"
+      },
+      {
+        "retained_position": 702,
+        "sent_id": "160491"
+      },
+      {
+        "retained_position": 703,
+        "sent_id": "160494"
+      },
+      {
+        "retained_position": 704,
+        "sent_id": "160495"
+      },
+      {
+        "retained_position": 705,
+        "sent_id": "160496"
+      },
+      {
+        "retained_position": 706,
+        "sent_id": "160497"
+      },
+      {
+        "retained_position": 707,
+        "sent_id": "160498"
+      },
+      {
+        "retained_position": 708,
+        "sent_id": "160499"
+      },
+      {
+        "retained_position": 709,
+        "sent_id": "160500"
+      },
+      {
+        "retained_position": 710,
+        "sent_id": "160501"
+      },
+      {
+        "retained_position": 711,
+        "sent_id": "160502"
+      },
+      {
+        "retained_position": 712,
+        "sent_id": "160503"
+      },
+      {
+        "retained_position": 713,
+        "sent_id": "224763"
+      },
+      {
+        "retained_position": 714,
+        "sent_id": "224764"
+      },
+      {
+        "retained_position": 715,
+        "sent_id": "224765"
+      },
+      {
+        "retained_position": 716,
+        "sent_id": "224766"
+      },
+      {
+        "retained_position": 717,
+        "sent_id": "160504"
+      },
+      {
+        "retained_position": 718,
+        "sent_id": "224768"
+      },
+      {
+        "retained_position": 719,
+        "sent_id": "160505"
+      },
+      {
+        "retained_position": 720,
+        "sent_id": "160506"
+      },
+      {
+        "retained_position": 721,
+        "sent_id": "160507"
+      },
+      {
+        "retained_position": 722,
+        "sent_id": "160508"
+      },
+      {
+        "retained_position": 723,
+        "sent_id": "160509"
+      },
+      {
+        "retained_position": 724,
+        "sent_id": "160510"
+      },
+      {
+        "retained_position": 725,
+        "sent_id": "160511"
+      },
+      {
+        "retained_position": 726,
+        "sent_id": "160512"
+      },
+      {
+        "retained_position": 727,
+        "sent_id": "160513"
+      },
+      {
+        "retained_position": 728,
+        "sent_id": "160514"
+      },
+      {
+        "retained_position": 729,
+        "sent_id": "160515"
+      },
+      {
+        "retained_position": 730,
+        "sent_id": "224770"
+      },
+      {
+        "retained_position": 731,
+        "sent_id": "160516"
+      },
+      {
+        "retained_position": 732,
+        "sent_id": "160517"
+      },
+      {
+        "retained_position": 733,
+        "sent_id": "160518"
+      },
+      {
+        "retained_position": 734,
+        "sent_id": "160519"
+      },
+      {
+        "retained_position": 735,
+        "sent_id": "160520"
+      },
+      {
+        "retained_position": 736,
+        "sent_id": "160521"
+      },
+      {
+        "retained_position": 737,
+        "sent_id": "160522"
+      },
+      {
+        "retained_position": 738,
+        "sent_id": "160523"
+      },
+      {
+        "retained_position": 739,
+        "sent_id": "160524"
+      },
+      {
+        "retained_position": 740,
+        "sent_id": "160525"
+      },
+      {
+        "retained_position": 741,
+        "sent_id": "160526"
+      },
+      {
+        "retained_position": 742,
+        "sent_id": "160527"
+      },
+      {
+        "retained_position": 743,
+        "sent_id": "160528"
+      },
+      {
+        "retained_position": 744,
+        "sent_id": "160529"
+      },
+      {
+        "retained_position": 745,
+        "sent_id": "160530"
+      },
+      {
+        "retained_position": 746,
+        "sent_id": "160531"
+      },
+      {
+        "retained_position": 747,
+        "sent_id": "160532"
+      },
+      {
+        "retained_position": 748,
+        "sent_id": "160533"
+      },
+      {
+        "retained_position": 749,
+        "sent_id": "160534"
+      },
+      {
+        "retained_position": 750,
+        "sent_id": "160535"
+      },
+      {
+        "retained_position": 751,
+        "sent_id": "160536"
+      },
+      {
+        "retained_position": 752,
+        "sent_id": "160537"
+      },
+      {
+        "retained_position": 753,
+        "sent_id": "160538"
+      },
+      {
+        "retained_position": 754,
+        "sent_id": "160539"
+      },
+      {
+        "retained_position": 755,
+        "sent_id": "160540"
+      },
+      {
+        "retained_position": 756,
+        "sent_id": "224772"
+      },
+      {
+        "retained_position": 757,
+        "sent_id": "160541"
+      },
+      {
+        "retained_position": 758,
+        "sent_id": "160544"
+      },
+      {
+        "retained_position": 759,
+        "sent_id": "160545"
+      },
+      {
+        "retained_position": 760,
+        "sent_id": "160546"
+      },
+      {
+        "retained_position": 761,
+        "sent_id": "160547"
+      },
+      {
+        "retained_position": 762,
+        "sent_id": "160548"
+      },
+      {
+        "retained_position": 763,
+        "sent_id": "160549"
+      },
+      {
+        "retained_position": 764,
+        "sent_id": "160550"
+      },
+      {
+        "retained_position": 765,
+        "sent_id": "160551"
+      },
+      {
+        "retained_position": 766,
+        "sent_id": "160552"
+      },
+      {
+        "retained_position": 767,
+        "sent_id": "160553"
+      },
+      {
+        "retained_position": 768,
+        "sent_id": "160554"
+      },
+      {
+        "retained_position": 769,
+        "sent_id": "160555"
+      },
+      {
+        "retained_position": 770,
+        "sent_id": "160556"
+      },
+      {
+        "retained_position": 771,
+        "sent_id": "160557"
+      },
+      {
+        "retained_position": 772,
+        "sent_id": "160558"
+      },
+      {
+        "retained_position": 773,
+        "sent_id": "160559"
+      },
+      {
+        "retained_position": 774,
+        "sent_id": "160560"
+      },
+      {
+        "retained_position": 775,
+        "sent_id": "160561"
+      },
+      {
+        "retained_position": 776,
+        "sent_id": "160562"
+      },
+      {
+        "retained_position": 777,
+        "sent_id": "160563"
+      },
+      {
+        "retained_position": 778,
+        "sent_id": "160564"
+      },
+      {
+        "retained_position": 779,
+        "sent_id": "160565"
+      },
+      {
+        "retained_position": 780,
+        "sent_id": "160566"
+      },
+      {
+        "retained_position": 781,
+        "sent_id": "160567"
+      },
+      {
+        "retained_position": 782,
+        "sent_id": "160568"
+      },
+      {
+        "retained_position": 783,
+        "sent_id": "160569"
+      },
+      {
+        "retained_position": 784,
+        "sent_id": "160570"
+      },
+      {
+        "retained_position": 785,
+        "sent_id": "160571"
+      },
+      {
+        "retained_position": 786,
+        "sent_id": "160572"
+      },
+      {
+        "retained_position": 787,
+        "sent_id": "160573"
+      },
+      {
+        "retained_position": 788,
+        "sent_id": "160574"
+      },
+      {
+        "retained_position": 789,
+        "sent_id": "160575"
+      },
+      {
+        "retained_position": 790,
+        "sent_id": "160576"
+      },
+      {
+        "retained_position": 791,
+        "sent_id": "160577"
+      },
+      {
+        "retained_position": 792,
+        "sent_id": "224773"
+      },
+      {
+        "retained_position": 793,
+        "sent_id": "160579"
+      },
+      {
+        "retained_position": 794,
+        "sent_id": "160580"
+      },
+      {
+        "retained_position": 795,
+        "sent_id": "160581"
+      },
+      {
+        "retained_position": 796,
+        "sent_id": "160582"
+      },
+      {
+        "retained_position": 797,
+        "sent_id": "160583"
+      },
+      {
+        "retained_position": 798,
+        "sent_id": "160584"
+      },
+      {
+        "retained_position": 799,
+        "sent_id": "160585"
+      }
+    ]
+  },
+  "prior_declaration_sha256": {
+    "experiments/results/grammar-restoration/iteration1/manifest.json": "c2bd417e5480cadd7a7455ad27635117c994afecdc5e28bb4947530ca31c39f1",
+    "experiments/results/grammar-restoration/iteration10/manifest.json": "a223aad2198c91bf437ced02ec61aa1b32af3fc54f1da8cf5ff561ba1ff1866c",
+    "experiments/results/grammar-restoration/iteration11/manifest.json": "9954587d3306c5d050278f86cedee0529763d7be04e0d6c46acfd1442f705e39",
+    "experiments/results/grammar-restoration/iteration12/manifest.json": "61f4374663a08bd419ed377da52a90c753900daff2df2fb0a8037b708c2bb6d9",
+    "experiments/results/grammar-restoration/iteration2/manifest.json": "c834f997eda1ec0479959885065011d2173b670afbcf061c6a9eefb0676e9aec",
+    "experiments/results/grammar-restoration/iteration3/evaluation-only-truth.json": "fe2bf5b4af38140069ea9b7b17106339e607ee14fd37ca36fe11d7b41dba7f02",
+    "experiments/results/grammar-restoration/iteration3/manifest.json": "61d16b0dafb74c3e3d564c0aa8f5d004dd3480a7a700810c3d65a06bcef95194",
+    "experiments/results/grammar-restoration/iteration3-v2/evaluation-only-truth.json": "fe2bf5b4af38140069ea9b7b17106339e607ee14fd37ca36fe11d7b41dba7f02",
+    "experiments/results/grammar-restoration/iteration3-v2/manifest.json": "24e402a96ca5e8ddfb12c1bfbbc205d35a7504556c0b49e12904adefaca4c7ec",
+    "experiments/results/grammar-restoration/iteration4/manifest.json": "d37b665d1c8d93fdffc0dde8780585d7e86a1bcd1dddf3319034d8e676d96406",
+    "experiments/results/grammar-restoration/iteration4/source-validation-truth.json": "2b294fee3b3f8e07a48cff4f7a8294f581f34cdecbfd6f34c3919faa860c1619",
+    "experiments/results/grammar-restoration/iteration4/target-evaluation-only-truth.json": "1815e6da9af39fb22a457ca8a51a27f292a4c4f7fbbeda08a6f693acad72274d",
+    "experiments/results/grammar-restoration/iteration5/confirmation-truth.json": "3881a408f055b6c81315cb6bb801de104936202de6135619f594493fb4395537",
+    "experiments/results/grammar-restoration/iteration5/development-truth.json": "a97359b970840dd7e4b613a56df4a017c6d3df12fc0e2dc7abd672055660c5e4",
+    "experiments/results/grammar-restoration/iteration5/manifest.json": "31074790ec49b3d250877076af663964bd4066300ff1d598c901fd9e72526a29",
+    "experiments/results/grammar-restoration/iteration5/target-evaluation-only-truth.json": "23130df3f10dcddd27515f951a3d67e38b7318acff8f1eb5b2d43388207ba056",
+    "experiments/results/grammar-restoration/iteration5-v2/confirmation-truth.json": "3881a408f055b6c81315cb6bb801de104936202de6135619f594493fb4395537",
+    "experiments/results/grammar-restoration/iteration5-v2/development-truth.json": "a97359b970840dd7e4b613a56df4a017c6d3df12fc0e2dc7abd672055660c5e4",
+    "experiments/results/grammar-restoration/iteration5-v2/manifest.json": "d46ae854f43aef834e0655488c80e02ef560070811842560eccd790d0bc132a7",
+    "experiments/results/grammar-restoration/iteration5-v2/target-evaluation-only-truth.json": "23130df3f10dcddd27515f951a3d67e38b7318acff8f1eb5b2d43388207ba056",
+    "experiments/results/grammar-restoration/iteration6/manifest.json": "b7c0beb6627efbf5239ae532613cedc75071d067c882477791542bd39d556958",
+    "experiments/results/grammar-restoration/iteration6-v2/manifest.json": "82bff9b0761adcb3a34f319cb4957caeaf0321ed828b582d5e01e2401908f9e2",
+    "experiments/results/grammar-restoration/iteration7/confirmation-truth.json": "baf3140f7cf32d2d2faf4c027b7a703791ede4ad3a25893b566601f340acbe9d",
+    "experiments/results/grammar-restoration/iteration7/development-truth.json": "a97359b970840dd7e4b613a56df4a017c6d3df12fc0e2dc7abd672055660c5e4",
+    "experiments/results/grammar-restoration/iteration7/manifest.json": "6f7b89fd7aaff23de9080becac75904ba993d74ada4b1a9d5e9579c7cc96f5d9",
+    "experiments/results/grammar-restoration/iteration7/train-truth.json": "936c44a038435aab1637a1537de8c61118c2b6bb268c314942bed6d569eeb8e2",
+    "experiments/results/grammar-restoration/iteration8/manifest.json": "aacfda272316238256cf0c8c0ad0311decbb3784c30861135f17debae2b22df9",
+    "experiments/results/grammar-restoration/iteration9/confirmation-truth.json": "9b4bb847addbb3370ca605b1a3b9568e3afb2080435480ac9c780537d16a35b2",
+    "experiments/results/grammar-restoration/iteration9/development-truth.json": "3546290d2ec570bf5c1929706bd5250ad5c8a32d1c3fafdd9b83943fcb13e3f5",
+    "experiments/results/grammar-restoration/iteration9/manifest.json": "99f2984c25c7f1e7620cc926c1f49a6641105e2d2bed8ff007f7035a1f375aff",
+    "experiments/results/grammar-restoration/iteration9/train-truth.json": "ded0792d8f3dfe15db1101845f1ea76228b77664b916ca868ec7569c07a396af"
+  },
+  "source_sha256": "010188e77944e87d959b578fb746b29c33c1b067dcc5652cbe13c60b40a6d0f6",
+  "scope": "disjoint from declared manifest/truth samples in grammar-restoration artifacts; not a claim about every other repository experiment",
+  "reservation_code_sha256": "8260b091c12bfdc950f1882fa2f593154b50e1c7fc42c9d1bde26fd21434f9e8"
+}

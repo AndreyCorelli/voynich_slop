@@ -1,0 +1,6 @@
+{
+  "source_report": "experiments/results/l3-conflict.json",
+  "timeout_ms": 30000,
+  "dictionary_encoding": "trie",
+  "candidate_count": 5
+}

@@ -1,0 +1,7 @@
+{
+  "source_report": "experiments/results/l3-conflict.json",
+  "seeds": [7, 17, 1729],
+  "vocabulary_sizes": [32, 256],
+  "control_timeout_ms": 30000,
+  "prefix_timeout_ms": 120000
+}

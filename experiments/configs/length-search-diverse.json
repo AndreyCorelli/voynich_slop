@@ -1,0 +1,9 @@
+{
+  "public_inputs": [
+    "data/generated/synthetic-prefix/inputs/seed-7-words-06.json",
+    "data/generated/synthetic-prefix/inputs/seed-7-words-08.json"
+  ],
+  "branch_timeout_ms": 30000,
+  "max_branches": 4,
+  "orderings": ["balanced", "candidate_rich"]
+}

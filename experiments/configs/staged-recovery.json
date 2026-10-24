@@ -1,0 +1,45 @@
+{
+  "plaintext_alphabet": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"],
+  "seeds": [7, 17, 1729],
+  "sizes": [5, 10, 25],
+  "timeout_ms": 10000,
+  "representation": "finite",
+  "stages": [
+    {
+      "name": "mono-v35",
+      "vocabulary_size": 35,
+      "ciphertext_alphabet": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x"],
+      "bounds": {"family": "monoalphabetic", "max_homophones": 1, "min_code_length": 1, "max_code_length": 1}
+    },
+    {
+      "name": "homophonic-v35",
+      "vocabulary_size": 35,
+      "ciphertext_alphabet": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V"],
+      "bounds": {"family": "homophonic", "max_homophones": 2, "min_code_length": 1, "max_code_length": 1}
+    },
+    {
+      "name": "verbose-h1-v35",
+      "vocabulary_size": 35,
+      "ciphertext_alphabet": ["a", "b", "c", "d", "e", "f", "g", "h"],
+      "bounds": {"family": "verbose", "max_homophones": 1, "min_code_length": 1, "max_code_length": 3}
+    },
+    {
+      "name": "verbose-h2-v5",
+      "vocabulary_size": 5,
+      "ciphertext_alphabet": ["a", "b", "c", "d", "e", "f", "g", "h"],
+      "bounds": {"family": "verbose", "max_homophones": 2, "min_code_length": 1, "max_code_length": 3}
+    },
+    {
+      "name": "verbose-h2-v15",
+      "vocabulary_size": 15,
+      "ciphertext_alphabet": ["a", "b", "c", "d", "e", "f", "g", "h"],
+      "bounds": {"family": "verbose", "max_homophones": 2, "min_code_length": 1, "max_code_length": 3}
+    },
+    {
+      "name": "verbose-h2-v35",
+      "vocabulary_size": 35,
+      "ciphertext_alphabet": ["a", "b", "c", "d", "e", "f", "g", "h"],
+      "bounds": {"family": "verbose", "max_homophones": 2, "min_code_length": 1, "max_code_length": 3}
+    }
+  ]
+}

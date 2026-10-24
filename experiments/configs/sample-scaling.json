@@ -1,0 +1,10 @@
+{
+  "voynich": "data/processed/zl-eva.json",
+  "latin": "data/processed/caesar-latin.json",
+  "sizes": [5, 10, 25, 50],
+  "sample": {"strategy": "first-clean-paragraph-run", "exclude_uncertain_spaces": true},
+  "single_letter_words": ["a", "e", "i", "o"],
+  "bounds": {"family": "verbose", "max_homophones": 2, "min_code_length": 1, "max_code_length": 2},
+  "selection": {"mode": "cycle", "reset": "text"},
+  "timeout_ms": 30000
+}

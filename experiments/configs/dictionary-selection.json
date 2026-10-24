@@ -1,0 +1,6 @@
+{
+  "source_report": "experiments/results/cycle-performance.json",
+  "seed": 7,
+  "timeout_ms": 30000,
+  "full_retry_timeout_ms": 120000
+}

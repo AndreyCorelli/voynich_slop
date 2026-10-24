@@ -1,0 +1,11 @@
+{
+  "ciphertext": {"words": []},
+  "plaintext_alphabet": {"symbols": ["a", "m", "o", "r"]},
+  "ciphertext_alphabet": {"symbols": ["a", "b", "c", "d", "e", "f", "g", "h", "n"]},
+  "bounds": {"family": "verbose", "max_homophones": 2, "min_code_length": 1, "max_code_length": 2},
+  "dictionary": {"words": [["a", "m", "o"], ["a", "m", "o", "r"], ["o", "r", "a"], ["o", "r", "o"], ["m", "o", "r", "a"]]},
+  "timeout_ms": 10000,
+  "representation": "finite",
+  "nulls": {"enabled": true, "max_distinct_symbols": 1, "max_occurrences": 4, "max_consecutive": 1},
+  "optimization": {"enabled": false, "method": "lexicographic"}
+}

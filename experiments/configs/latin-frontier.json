@@ -1,0 +1,19 @@
+{
+  "voynich": "data/processed/zl-eva.json",
+  "latin": "data/processed/caesar-latin.json",
+  "sample": {"words": 5, "folio": "f1r"},
+  "synthetic_seeds": [7, 17, 1729],
+  "control_seed": 7,
+  "controls": ["within-word-shuffle", "frequency-shuffle"],
+  "timeout_ms": 10000,
+  "selection_policies": [{"mode": "free", "reset": "text"}, {"mode": "cycle", "reset": "text"}],
+  "stages": [
+    {"name": "v32-h1-l2", "vocabulary_size": 32, "max_homophones": 1, "max_code_length": 2},
+    {"name": "v128-h1-l2", "vocabulary_size": 128, "max_homophones": 1, "max_code_length": 2},
+    {"name": "v512-h1-l2", "vocabulary_size": 512, "max_homophones": 1, "max_code_length": 2},
+    {"name": "vall-h1-l2", "vocabulary_size": "all", "max_homophones": 1, "max_code_length": 2},
+    {"name": "vall-h2-l2", "vocabulary_size": "all", "max_homophones": 2, "max_code_length": 2},
+    {"name": "vall-h3-l2", "vocabulary_size": "all", "max_homophones": 3, "max_code_length": 2},
+    {"name": "vall-h3-l3", "vocabulary_size": "all", "max_homophones": 3, "max_code_length": 3}
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "scope": "Authored restricted-construction diagnostics, not human-adjudicated natural Latin or blind author tests",
+  "gate": {"minimal_pairs_each_split": 8, "require_all_references_supported": true, "require_all_corruptions_no_parse": true, "require_all_valid_controls_supported": true, "require_complete_latent_coverage": true},
+  "pairs": [
+    {"id":"dev-subject-1","split":"development","kind":"subject_number","reference":"puella currit","corrupted":"puella currunt","explanation":"Singular nominative subject versus plural finite verb."},
+    {"id":"dev-subject-2","split":"development","kind":"subject_number","reference":"puer puellam uidet","corrupted":"puer puellam uident","explanation":"Singular nominative subject versus plural finite verb; accusative object is unchanged."},
+    {"id":"dev-modifier-1","split":"development","kind":"modifier_agreement","reference":"puella bona currit","corrupted":"puella bonus currit","explanation":"Masculine modifier cannot agree with feminine singular subject; a second nominal reading cannot create another subject."},
+    {"id":"dev-modifier-2","split":"development","kind":"modifier_agreement","reference":"puer magnus currit","corrupted":"puer magna currit","explanation":"Feminine singular/neuter plural readings cannot modify masculine singular puer; curro has no direct object here."},
+    {"id":"dev-government-1","split":"development","kind":"preposition_case","reference":"puella ad urbem currit","corrupted":"puella ad urbe currit","explanation":"ad governs accusative, not ablative."},
+    {"id":"dev-government-2","split":"development","kind":"preposition_case","reference":"puer sine puella currit","corrupted":"puer sine puellam currit","explanation":"sine governs ablative, not accusative."},
+    {"id":"dev-predicate-1","split":"development","kind":"finite_predicate","reference":"puella currit","corrupted":"puella currens","explanation":"Replaces the finite verb with a participle; fragments/ellipsis are outside this controlled task."},
+    {"id":"dev-predicate-2","split":"development","kind":"finite_predicate","reference":"puer puellam uidet","corrupted":"puer puellam uisam","explanation":"No finite predicate remains; participial/noun readings do not supply one."},
+    {"id":"confirm-subject-1","split":"confirmation","kind":"subject_number","reference":"agricola laborat","corrupted":"agricola laborant","explanation":"Singular nominative subject versus plural finite verb."},
+    {"id":"confirm-subject-2","split":"confirmation","kind":"subject_number","reference":"miles audit","corrupted":"miles audiunt","explanation":"Singular nominative subject versus plural finite verb."},
+    {"id":"confirm-modifier-1","split":"confirmation","kind":"modifier_agreement","reference":"agricola magnus laborat","corrupted":"agricola magna laborat","explanation":"Masculine agricola cannot take a feminine singular/neuter plural modifier in this construction."},
+    {"id":"confirm-modifier-2","split":"confirmation","kind":"modifier_agreement","reference":"miles laetus dormit","corrupted":"miles laeta dormit","explanation":"Masculine singular subject requires matching modifier; dormio supplies no direct-object role."},
+    {"id":"confirm-government-1","split":"confirmation","kind":"preposition_case","reference":"agricola ad ciuitatem ambulat","corrupted":"agricola ad ciuitate ambulat","explanation":"ad requires accusative ciuitatem."},
+    {"id":"confirm-government-2","split":"confirmation","kind":"preposition_case","reference":"miles ex urbe ambulat","corrupted":"miles ex urbem ambulat","explanation":"ex requires ablative urbe."},
+    {"id":"confirm-predicate-1","split":"confirmation","kind":"finite_predicate","reference":"equus dormit","corrupted":"equus dormiens","explanation":"Participial fragment has no finite predicate in the supported construction."},
+    {"id":"confirm-predicate-2","split":"confirmation","kind":"finite_predicate","reference":"miles puellam audit","corrupted":"miles puellam audiens","explanation":"No finite predicate remains."}
+  ],
+  "controls": [
+    {"id":"dev-order-1","split":"development","kind":"word_order","tokens":"puellam puer uidet"},
+    {"id":"dev-order-2","split":"development","kind":"word_order","tokens":"uidet puellam puer"},
+    {"id":"dev-order-3","split":"development","kind":"word_order","tokens":"bona currit puella"},
+    {"id":"dev-omitted-1","split":"development","kind":"omitted_subject","tokens":"currit"},
+    {"id":"dev-omitted-2","split":"development","kind":"omitted_subject","tokens":"puellam uidet"},
+    {"id":"dev-lexical-1","split":"development","kind":"compatible_lexical","tokens":"puer currit"},
+    {"id":"dev-lexical-2","split":"development","kind":"compatible_lexical","tokens":"puella ambulat"},
+    {"id":"confirm-order-1","split":"confirmation","kind":"word_order","tokens":"magnus laborat agricola"},
+    {"id":"confirm-order-2","split":"confirmation","kind":"word_order","tokens":"puellam audit miles"},
+    {"id":"confirm-order-3","split":"confirmation","kind":"word_order","tokens":"audit miles puellam"},
+    {"id":"confirm-omitted-1","split":"confirmation","kind":"omitted_subject","tokens":"laborat"},
+    {"id":"confirm-omitted-2","split":"confirmation","kind":"omitted_subject","tokens":"puellam audit"},
+    {"id":"confirm-lexical-1","split":"confirmation","kind":"compatible_lexical","tokens":"miles dormit"},
+    {"id":"confirm-lexical-2","split":"confirmation","kind":"compatible_lexical","tokens":"agricola dormit"}
+  ],
+  "streams": [
+    {"id":"dev-two-clauses","split":"development","reference":"puella currit puer dormit","corrupted":"puella currunt puer dormit","boundaries":[2,4]},
+    {"id":"confirm-two-clauses","split":"confirmation","reference":"agricola laborat miles dormit","corrupted":"agricola laborant miles dormit","boundaries":[2,4]},
+    {"id":"dev-reordered-clauses","split":"development","reference":"puellam puer uidet currit puella","corrupted":"puellam puer uident currit puella","boundaries":[3,5]},
+    {"id":"confirm-reordered-clauses","split":"confirmation","reference":"magnus laborat agricola puellam audit miles","corrupted":"magna laborat agricola puellam audit miles","boundaries":[3,6]}
+  ]
+}

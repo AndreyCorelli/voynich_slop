@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "train_words": 30,
+  "holdout_words": 22,
+  "fit_budget_ms": 1800000,
+  "key_seed": 7,
+  "choice_seed": 17,
+  "shuffle_seed": 1729,
+  "gate_fully_decoded_words": 22,
+  "gate_dictionary_words": 22,
+  "model": "Atomic EVA, free H2/L1–3, global prefix-free, no nulls or contractions; corrected Latin and Swabian dictionaries separate.",
+  "selection": "First contiguous 52 eligible words per source; synthetic words must be covered by the dictionary, excluded/uncovered records break runs. Voynich stays on one folio. No scoring-based selection.",
+  "controls": "One shared Voynich 30+22 block and one typewise shuffle preserving lengths, global/per-word counts and exact equality across training and holdout, separately fitted under each dictionary.",
+  "evaluation": "Freeze recovered key after SAT; score 22-word continuation including novel ciphertext forms. UNKNOWN gets no predictive score. One seed and one fit per case, no repairs or solver tuning.",
+  "limitations": "Synthetic and Voynich word counts match, glyph counts and length distributions do not. Natural passages encrypted by expansion can be much longer than Voynich. One fitted key per case is not exhaustive identification. Retrospective corpus benchmark, not blind evidence or language likelihood.",
+  "gate": "Start with Latin synthetic. A short UNKNOWN is unresolved; run only that case at the fixed long budget. Before running the remaining matrix, review synthetic frozen-key prediction. SAT alone does not pass the predictive gate. Do not run or interpret the full matrix if synthetic prediction is poor."
+}

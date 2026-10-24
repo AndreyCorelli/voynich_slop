@@ -1,0 +1,5 @@
+{
+  "source_report": "experiments/results/synthetic-prefix.json",
+  "word_count": 4,
+  "timeout_ms": 30000
+}

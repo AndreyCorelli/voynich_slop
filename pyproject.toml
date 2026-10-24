@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "voynich-smt"
+version = "0.1.0"
+description = "Bounded SMT experiments for Voynich-compatible reversible cipher models"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["z3-solver>=4.13,<5"]
+
+[project.scripts]
+voynich-smt = "voynich_smt.cli:main"
+
+[project.optional-dependencies]
+word-mapping = [
+    "numba>=0.63,<1",
+    "numpy>=2,<3",
+    "scipy>=1.14,<2",
+]
+word-mapping-neural = [
+    "torch>=2.6,<3",
+    "transformers>=4.48,<5",
+    "safetensors>=0.5,<1",
+]
+
+[dependency-groups]
+dev = [
+    "beautifulsoup4>=4.15.0",
+    "matplotlib>=3.11.2",
+    "pytest>=8,<10",
+    "networkx>=3.4,<4",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/voynich_smt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

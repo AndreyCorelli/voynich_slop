@@ -1,0 +1,11 @@
+{
+  "boundary_report": "experiments/results/unsat-boundary.json",
+  "synthetic_seeds": [7, 17, 1729],
+  "gate_timeout_ms": 30000,
+  "attempts": [
+    {"dictionary_encoding": "flat", "timeout_ms": 30000},
+    {"dictionary_encoding": "flat", "timeout_ms": 120000},
+    {"dictionary_encoding": "trie", "timeout_ms": 30000},
+    {"dictionary_encoding": "trie", "timeout_ms": 120000}
+  ]
+}
