@@ -28,10 +28,17 @@ Historical German trials also yielded partial frequent-word recovery without a t
 The current work isolates grammatical information that can be inferred for opaque repeated word types and used as constraints in a later decoder.
 Unlike the initial search for a complete word dictionary, it separately tests function-word classification, prepositional-phrase membership, and selective repair of mistaken grammatical anchors.
 Experiments compare frozen models with baselines and controls, recording both useful signals and failures of precision, coverage, or transfer.
-The strongest findings remain conditional on supplied surrounding anchors and existing segmentation, so they do not yet demonstrate blind recovery from Voynich.
-The [experiment tracker](docs/grammar_algorithm_proposals.md) preserves results and proposed changes; the next proposed model experiment balances first-stage class training to improve confidence ordering.
+Conditional word-class signals, coarse grammatical shortlists, and source-trained case-applicability ranking provide measured inputs, with explicit limits on supervision, coverage, and transfer reliability.
+The [experiment tracker](docs/grammar_algorithm_proposals.md) preserves successes, limitations, and proposed checks before any Voynich application.
 
 ## Progress
+
+### 2026-10-25: promising grammatical inputs
+
+A source-trained model selects **9/10 case-comparable pairs** in another Cicero passage, spanning 11 word types with 82.87% conditional case agreement, without target POS/case labels at inference.
+Its target AUC is **0.842**, and the gain [survives 199 shuffled-source-label controls](docs/grammar_case_source_labels_iteration181.md).
+Other preserved findings include context-specific case compatibility and [80–90% coarse grammatical membership in top-ten word lists across four datasets](docs/grammar_broad_source_authors_iteration159.md).
+These remain development findings, with same-author and lexical-overlap limits on the new model; **no named cases or lexical nuclei are restored**—see the [daily record](docs/progress/20261025.md).
 
 ### 2026-10-24: three potential grammatical inputs preserved
 

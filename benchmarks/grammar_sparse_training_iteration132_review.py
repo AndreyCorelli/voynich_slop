@@ -1,0 +1,31 @@
+"""Audit matched sparse training, strict type exclusion and PP transfer."""
+from benchmarks.grammar_sparse_training_iteration132 import *
+from voynich_smt.paired_anchor_class import target_features
+
+def run():
+    hashes=0
+    for name in ['design-freeze','model-freeze','input-freeze','predictions-freeze']:
+        for p,h in load(OUT/(name+'.json'))['inputs'].items():assert digest(p)==h,p;hashes+=1
+    public,lookup,anchors,split,words,allowed=training_inputs();train=split['training'];assert not set(train)&set(words);assert all(t['anchor'] in allowed or t['anchor'] is None for s in public for t in s['tokens']);assert all(t['tag']=='X' for s in public for t in s['tokens'] if t['anchor'] is None);models=load(OUT/'models.json');provenance=load(OUT/'training-provenance.json');oldprov=load(ROOT/'iteration124/training-provenance.json');hidden={lookup[w] for w in words};oof={};maxdiff=0.
+    for key in ['0','1','2','final']:
+        held=[] if key=='final' else [w for w in train if split['oof_folds'][w]==int(key)];tr=[w for w in train if w not in held];hid=hidden|{lookup[w] for w in held};m,p=train_balanced(public,tr,hid,lookup,anchors);expected={k:v for k,v in provenance[key].items() if k not in ['train','held']};assert p==expected;assert p['sampled_rows']==oldprov[key]['sampled_rows'];assert np.allclose(p['class_weight_mass'],[.5,.5]);assert m['vocabulary']==models[key]['vocabulary'];diff=float(np.max(np.abs(np.array(m['weights'])-np.array(models[key]['weights']))));maxdiff=max(maxdiff,diff);print('retrain',key,'max_weight_difference',diff,'loss_difference',abs(m['loss']-models[key]['loss']),flush=True);xx=[r['features'] for w in tr for r in cap_rows(masked_type_features(public,hid,lookup[w]))];pdiff=float(np.max(np.abs(ag.predict(xx,m)-ag.predict(xx,models[key]))));print('training_probability_difference',pdiff,flush=True);assert abs(m['loss']-models[key]['loss'])<1e-8 and pdiff<1e-4;oof.update(grouped_profile(public,held,lookup,hid,models[key]))
+    frozen=load(OUT/'oof-profiles.json');assert all(abs(oof[w]['mean']-frozen[w]['mean'])<1e-12 for w in train);cal=load(OUT/'calibrator.json');expected=fit_offset([oof[w]['mean'] for w in train],[int(anchors[w]=='CCONJ') for w in train],True);assert abs(cal['offset']-expected['offset'])<1e-10
+    contexts={'source':load(ROOT/'iteration118/public.json')};contexts.update({a+'-'+v:load(p) for a,vv in INPUTS.items() for v,p in vv.items()});old={'source':load(ROOT/'iteration129/predictions.json')['5'],**load(ROOT/'iteration130/predictions.json')};labels={'source':load(BASE/'predictions.json')};labels.update({a+'-'+v:load(p) for a,p in LABELS.items() for v in ['base','expanded']});cohorts={'source':load(ROOT/'iteration120/cohorts.json')};cohorts.update({a+'-'+v:load(ROOT/'iteration130/cohorts.json')[a] for a in INPUTS for v in ['base','expanded']});oldpp={'source':{a:load(ROOT/'iteration129/budget-5/scores.json')[a] for a in ['unknown','hard']},**load(ROOT/'iteration130/scores.json')};predictions=load(OUT/'predictions.json');scores=load(OUT/'scores.json');summary=load(OUT/'class-summary.json');evaluation=load(OUT/'evaluation.json');reserved={r['sent_id'] for rr in load('experiments/holdouts/grammar-construction-next.json')['authors'].values() for r in rr};assert not {s['sent_id'] for s in public}&reserved;types=checks=0;diagnostics={}
+    for key,context in contexts.items():
+        assert not {s['sent_id'] for s in context}&reserved;lookup={r['type']:r['opaque'] for r in old[key]};targets=set(lookup.values());masked=mask_budget(context,targets,allowed);rr=target_features(masked,targets);q=ag.predict([r['features'] for r in rr],models['final']);rows=predictions[key];prior={r['type']:r for r in old[key]};assert len(rows)==len(prior);tags={}
+        for r in rows:
+            ix=[i for i,t in enumerate(rr) if t['word']==r['opaque']];raw=float(q[ix,1].mean());assert r['n']==len(ix);assert abs(raw-r['probabilities']['raw'])<1e-12;assert abs(float(apply_offset([raw],cal)[0])-r['probabilities']['matched'])<1e-12;assert r['probabilities']['previous']==prior[r['type']]['probabilities']['balanced124'];tags[r['opaque']]='CCONJ' if r['probabilities']['matched']>.5 else 'ADP';types+=1
+        for group,ms in summary[key].items():
+            rs=[r for r in rows if group=='all' or r['supported']]
+            for arm,m in ms.items():
+                p=np.array([r['probabilities'][arm] for r in rs]);y=np.array([anchors[r['type']]=='CCONJ' for r in rs]);assert m['correct']==int(((p>.5)==y).sum());assert abs(m['nll']-float(-np.log(np.where(y,p,1-p)).mean()))<1e-12
+                if y.any() and (~y).any():assert m['auc']==float(np.mean((p[y,None]>p[~y][None,:])+.5*(p[y,None]==p[~y][None,:])))
+        view=load(OUT/('public-'+key+'.json'));assert view==inject(masked if key=='source' else masked[:100],targets,tags);assert [(s['sent_id'],i) for s in view for i,t in enumerate(s['tokens'])]==[(r['sid'],r['index']) for r in labels[key]];p=[r['scores']['pooled_pos']['pp'] for r in infer85(query_rows(view,labels[key]),load(BASE/'models.json'))];assert np.allclose(p,scores[key],rtol=1e-12,atol=1e-12)
+        for co,ii in cohorts[key].items():
+            a=np.array(p)[ii]>=.8;y=np.array([labels[key][i]['labels']['pp'] for i in ii],bool);e=evaluation[key][co];m=e['metrics'];assert [m[k] for k in ['tp','fp','fn','tn']]==[int((a&y).sum()),int((a&~y).sum()),int((~a&y).sum()),int((~a&~y).sum())]
+            for comp,base in [('oldhard',oldpp[key]['hard']),('unknown',oldpp[key]['unknown'])]:
+                b=np.array(base)[ii]>=.8;assert e['changes_from_'+comp]==dict(new_tp=int((a&~b&y).sum()),new_fp=int((a&~b&~y).sum()),lost_tp=int((~a&b&y).sum()),removed_fp=int((~a&b&~y).sum()))
+            checks+=1
+        diagnostics[key]=dict(predicted_ADP=[r['type'] for r in rows if tags[r['opaque']]=='ADP'],wrong_types=[r['type'] for r in rows if tags[r['opaque']]!=anchors[r['type']]])
+    save(OUT/'diagnostic.json',diagnostics);save(OUT/'audit.json',dict(input_hashes_verified=hashes,models_retrained=4,maximum_retrained_weight_difference=maxdiff,sampled_rows_identical_to124=True,oof_profiles_replayed=13,type_probabilities_recomputed=types,pp_vectors_recomputed=5,metric_transition_groups=checks,strict_target_exclusion_and_reserve_checked=True));print(load(OUT/'audit.json'));print(diagnostics)
+if __name__=='__main__':run()

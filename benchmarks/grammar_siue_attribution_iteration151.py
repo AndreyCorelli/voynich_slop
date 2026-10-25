@@ -1,0 +1,17 @@
+"""Two fixed feature-vector interventions for middle-siue substitution."""
+from benchmarks.grammar_training_sensitivity_iteration148 import *
+OUT=ROOT/'iteration151'
+
+def run():
+    assert not OUT.exists();OUT.mkdir();(OUT/'proposal-design.md').write_text(Path('docs/grammar_algorithm_proposals.md').read_text())
+    paths=[Path(__file__),ROOT/'iteration150/verification-manifest.json',ROOT/'iteration150/features.json',ROOT/'iteration150/models.json',ROOT/'iteration150/predictions.json',ROOT/'iteration144/features.json',ROOT/'iteration144/predictions.json',ROOT/'iteration116/type-split.json',ROOT/'iteration85/anchor-budgets.json',Path('benchmarks/grammar_joint_scalars_iteration142.py')]
+    save(OUT/'design-freeze.json',dict(inputs={str(p):digest(p) for p in paths},design='Two fixed diagnostic hybrids of150full and middle-only(mask2) training features: focal_only changes siue vector only; others_only changes other12 vectors only. Use original13training labels, same2scalarfeatures/classbalancedL2/optimizer/recomputedtrainstandardization/raw>.5. Full and middle_perturbed frozen150references. No search/authorselection/newlabels/rawannotations/reserve/sealedworks. Freezehybrids before fitting, models before targets, predictions before modalmetrics. Report all7texts allpresentcandidate accuracy/NLL/AUC/pairedflips and originalunitcoefficients. These hybrids are feature interventions, not realizable streams or proposed deployable fixes; purpose attribute influence not claim confidence/nuclei/generalPOS.'))
+    train=load(ROOT/'iteration116/type-split.json')['training'];anchors=load(ROOT/'iteration85/anchor-budgets.json')['195'];lookup={w:hashlib.sha256(('fit116|'+w).encode()).hexdigest() for w in train};assert not set(train)&set(load(ROOT/'iteration93/types.json')['candidates']);source=load(ROOT/'iteration150/features.json');siue=lookup['siue'];hybrids={'focal_only':{i:dict(source['2'][i] if i==siue else f) for i,f in source['full'].items()},'others_only':{i:dict(source['full'][i] if i==siue else f) for i,f in source['2'].items()}};save(OUT/'hybrids.json',hybrids);save(OUT/'hybrids-freeze.json',dict(inputs={str(OUT/'hybrids.json'):digest(OUT/'hybrids.json')}));prior=load(ROOT/'iteration150/models.json');models={'full':prior['full'],'middle_perturbed':prior['2']}
+    for name,f in hybrids.items():models[name]=fit_vector(f,train,lookup,anchors,COLS)
+    save(OUT/'models.json',models);save(OUT/'model-freeze.json',dict(inputs={str(OUT/'models.json'):digest(OUT/'models.json')}));cached=load(ROOT/'iteration144/features.json');old=load(ROOT/'iteration144/predictions.json');pred={}
+    for key,configs in old.items():
+        if not key.endswith('/full'):continue
+        w=key[:-5];pred[w]={name:[dict(r,probabilities=dict(raw=predict_vector(cached[key][r['opaque']],m))) for r in configs['joint']] for name,m in models.items()};assert pred[w]['full']==configs['joint'];assert pred[w]['middle_perturbed']==load(ROOT/'iteration150/predictions.json')[w]['2']
+    save(OUT/'predictions.json',pred);save(OUT/'predictions-freeze.json',dict(inputs={str(OUT/'predictions.json'):digest(OUT/'predictions.json')}));summary=evaluate(pred,anchors,{name:'feature_intervention' for name in models});save(OUT/'summary.json',summary)
+    for w,rr in summary.items():print(w,{name:(r['metrics']['correct'],len(r['decision_flips']),r['metrics']['nll']) for name,r in rr.items()},flush=True)
+if __name__=='__main__':run()

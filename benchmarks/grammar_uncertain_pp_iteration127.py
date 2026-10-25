@@ -1,0 +1,32 @@
+"""Source-selected posterior marginalization over opaque type classes."""
+from benchmarks.grammar_balanced_training_iteration124 import *
+from scipy.stats import qmc
+OUT=ROOT/'iteration127'
+ALPHAS=[0.,.25,.5,.75,1.]
+
+def draws(prob):
+    ids=sorted(prob);u=qmc.Sobol(d=len(ids),scramble=True,seed=12700).random_base2(5)
+    return [{i:('CCONJ' if u[j,k]<prob[i] else 'ADP') for k,i in enumerate(ids)} for j in range(32)]
+
+def score_views(public,prob,labels,folder):
+    folder.mkdir();ids=set(prob);assignments=dict(unknown={},hard={i:('CCONJ' if p>.5 else 'ADP') for i,p in prob.items()});assignments.update({'draw'+str(j):tags for j,tags in enumerate(draws(prob))});save(folder/'assignments.json',assignments);save(folder/'input-freeze.json',dict(inputs={str(folder/'assignments.json'):digest(folder/'assignments.json')}));model=load(BASE/'models.json');scores={}
+    for arm,tags in assignments.items():
+        scores[arm]=[r['scores']['pooled_pos']['pp'] for r in infer85(query_rows(inject(public,ids,tags),labels),model)]
+    scores['posterior']=np.mean([scores['draw'+str(j)] for j in range(32)],axis=0).tolist()
+    for alpha in ALPHAS:scores['alpha'+str(alpha)]=((1-alpha)*np.array(scores['unknown'])+alpha*np.array(scores['posterior'])).tolist()
+    save(folder/'scores.json',scores);save(folder/'predictions-freeze.json',dict(inputs={str(folder/'scores.json'):digest(folder/'scores.json')}));return scores
+
+def run():
+    assert not OUT.exists();OUT.mkdir();(OUT/'proposal-design.md').write_text(Path('docs/grammar_algorithm_proposals.md').read_text())
+    paths=[Path(__file__),ROOT/'iteration124/models.json',ROOT/'iteration124/calibrator.json',ROOT/'iteration124/predictions.json',ROOT/'iteration124/scores.json',ROOT/'iteration122/calibration-public-original.json',ROOT/'iteration118/public.json',BASE/'models.json',BASE/'calibration-predictions.json',BASE/'predictions.json',ROOT/'iteration120/cohorts.json',ROOT/'iteration120/scores-predicted.json',ROOT/'iteration120/scores-unknown.json',Path('src/voynich_smt/opaque_class_tags.py'),Path('experiments/holdouts/grammar-construction-next.json')]
+    save(OUT/'design-freeze.json',dict(inputs={str(p):digest(p) for p in paths},design='SOURCE-ONLY uncertainty integration, fixed124classmodel/13OOFoffset and85originalPPmodel. Approx posterior marginalization: 32scrambledSobol draws(seed12700), eachtype ADP/CCONJ sampledONCEforALLitsoccurrences, independenttypeprior fromclassprobabilities; targetnamesalwayshidden, otheranchorsunchanged. Infer completePPmodel for eachassignment thenaverage probabilities, NOTgoldgating or token-independenttag sampling. Finitedraw approximation/no jointposterior/calibration guarantee. 5fixedalphas0,.25,.5,.75,1 score=(1-alpha)unknown+alpha posteriormean. Oncached122sourcecal829 reuse85PPlabelsonly; fixedPPcut.80 requireprecision>=.90andTP>=ceil(.8*newhardclassTP). MaxTP/minFP/highestalpha,OFFifnone fallbackhard notunknown. Freeze selection BEFOREtestinputprobability loading. Exact118test770/9956, new124probabilities, fixed120cohorts. Reportallarms primary.80 secondary.55, transitionlosses vs hard/unknown/old120. Primarytest same90/80vsnewhard and>=188TPold120coverage; no guardrelaxation. Allalphatestresultsdescriptive,neverchoosebesttest. Noaugmentedmodel/author/newannotations/reserve/sealedlexicaltest/defaultadoption/nuclei. Reuseddevelopment; preserveclasssignal independentlyofintegrationfailure.'))
+    public=load(ROOT/'iteration122/calibration-public-original.json');words=load(ROOT/'iteration93/types.json')['candidates'];lookup={w:hashlib.sha256(('cal122|'+w).encode()).hexdigest() for w in words};profiles=grouped_profile(public,words,lookup,set(lookup.values()),load(ROOT/'iteration124/models.json')['final']);calibrator=load(ROOT/'iteration124/calibrator.json');prob={lookup[w]:float(apply_offset([p['mean']],calibrator)[0]) for w,p in profiles.items()};save(OUT/'calibration-probabilities.json',prob);labels=[dict(sid=r['sid'],index=r['index'],labels=r['labels']) for r in load(BASE/'calibration-predictions.json')];scores=score_views(public,prob,labels,OUT/'calibration');ii=list(range(len(labels)));baseline=confusion(labels,scores['hard'],.8,ii);curve=[]
+    for alpha in ALPHAS:
+        m=confusion(labels,scores['alpha'+str(alpha)],.8,ii);curve.append(dict(alpha=alpha,metrics=m,qualified=m['precision'] is not None and m['precision']>=.9 and m['tp']>=math.ceil(.8*baseline['tp'])))
+    good=[r for r in curve if r['qualified']];chosen=max(good,key=lambda r:(r['metrics']['tp'],-r['metrics']['fp'],r['alpha'])) if good else dict(alpha=None,qualified=False);save(OUT/'calibration-curve.json',dict(hard_baseline=baseline,rows=curve));save(OUT/'chosen.json',chosen);save(OUT/'policy-freeze.json',dict(inputs={str(OUT/name):digest(OUT/name) for name in ['chosen.json','calibration-curve.json','calibration-probabilities.json']}));print('CAL',baseline,curve,'CHOSEN',chosen,flush=True)
+    test=load(ROOT/'iteration118/public.json');rows=load(ROOT/'iteration124/predictions.json');prob={r['opaque']:r['probabilities']['balanced'] for r in rows};save(OUT/'test-probabilities.json',prob);labels=[dict(sid=r['sid'],index=r['index'],labels=r['labels']) for r in load(BASE/'predictions.json')];scores=score_views(test,prob,labels,OUT/'test');cohorts=load(ROOT/'iteration120/cohorts.json');old=load(ROOT/'iteration120/scores-predicted.json')['original'];evaluation={}
+    arms=['unknown','hard','posterior']+['alpha'+str(a) for a in ALPHAS]
+    for arm in arms:evaluation[arm]={str(cut):{c:dict(metrics=confusion(labels,scores[arm],cut,ii),changes_from_hard=changes(labels,scores['hard'],scores[arm],cut,ii),changes_from_unknown=changes(labels,scores['unknown'],scores[arm],cut,ii),changes_from_previous=changes(labels,old,scores[arm],cut,ii)) for c,ii in cohorts.items()} for cut in [.8,.55]}
+    arm='alpha'+str(chosen['alpha']) if chosen['qualified'] else 'hard';m=evaluation[arm]['0.8']['all']['metrics'];hard=evaluation['hard']['0.8']['all']['metrics'];save(OUT/'evaluation.json',evaluation);save(OUT/'result.json',dict(selected_arm=arm,calibration_qualified=chosen['qualified'],selected=m,hard_baseline=hard,passed=bool(chosen['qualified'] and m['precision'] is not None and m['precision']>=.9 and m['tp']>=max(188,math.ceil(.8*hard['tp'])))));print('RESULT',load(OUT/'result.json'),flush=True)
+    for arm in arms:print(arm,evaluation[arm]['0.8']['all'],flush=True)
+if __name__=='__main__':run()

@@ -1,0 +1,20 @@
+"""Fixed source-sentence deletions for the six siue occurrences."""
+from benchmarks.grammar_training_sensitivity_iteration148 import *
+OUT=ROOT/'iteration149'
+
+def run():
+    assert not OUT.exists();OUT.mkdir();(OUT/'proposal-design.md').write_text(Path('docs/grammar_algorithm_proposals.md').read_text())
+    paths=[Path(__file__),ROOT/'iteration148/verification-manifest.json',ROOT/'iteration142/models.json',ROOT/'iteration142/training-features.json',ROOT/'iteration144/features.json',ROOT/'iteration144/predictions.json',ROOT/'iteration116/type-split.json',ROOT/'iteration44/annotations-truth.json',ROOT/'iteration49/manifest.json',ROOT/'iteration85/anchor-budgets.json',Path('src/voynich_smt/opaque_context_overlap.py'),Path('src/voynich_smt/opaque_context_roles.py')]
+    save(OUT/'design-freeze.json',dict(inputs={str(p):digest(p) for p in paths},design='Source-only occurrence sensitivity of influential siue. Locate all siue opaqueID occurrences in same sourcefit116 stream (expected6). Freeze each containing sentence removal before features/fitting. One model per unique sentence, occurrence->sentence mapping explicit; retain all13 training types, same two features, original classbalancedL2/optimizer/retained-type standardization/raw0.5. Concatenate remaining sentences unchanged, new deletion seam explicit. Recompute BOTH features for ALL13 types. Full model must replay142; freeze all models before seven target predictions, predictions before modal-reference evaluation. Report all deletions including duplicates, count/feature/parameter changes, accuracy,NLL,AUC,paired flips vsfull; no selected deletion or confidencegate. Reuse144fulltargetfeatures; no target feature refits/newannotations/reserve/sealedworks/rawtexts. Training sentence text need not be published, IDs/positions sufficient.'))
+    public,lookup,anchors,split,words,allowed=training_inputs();train=split['training'];wanted={lookup[w] for w in train};occurrences=[dict(sent_id=s['sent_id'],sentence_index=j,token_index=k) for j,s in enumerate(public) for k,t in enumerate(s['tokens']) if t['id']==lookup['siue']];assert len(occurrences)==6;indices=sorted({r['sentence_index'] for r in occurrences});selection={f'delete{j}':dict(sentence_index=j,sent_id=public[j]['sent_id'],tokens=len(public[j]['tokens']),siue_occurrences=sum(r['sentence_index']==j for r in occurrences)) for j in indices};save(OUT/'selection.json',dict(occurrences=occurrences,deletions=selection));save(OUT/'selection-freeze.json',dict(inputs={str(OUT/'selection.json'):digest(OUT/'selection.json')}));models={};features={};counts={}
+    for name,j in [('full',None)]+[(name,r['sentence_index']) for name,r in selection.items()]:
+        ids=[t['id'] for k,s in enumerate(public) if k!=j for t in s['tokens']];f=features_for(ids,wanted);features[name]=f;counts[name]={w:f[lookup[w]]['n'] for w in train};models[name]=fit_vector(f,train,lookup,anchors,COLS)
+    baseline=load(ROOT/'iteration142/models.json')['joint']['final'];assert np.allclose(models['full']['weights'],baseline['weights'],atol=1e-6);models['full']=baseline
+    for n,x in [('features',features),('counts',counts),('models',models)]:save(OUT/(n+'.json'),x)
+    save(OUT/'model-freeze.json',dict(inputs={str(OUT/(n+'.json')):digest(OUT/(n+'.json')) for n in ['features','counts','models']}));cached=load(ROOT/'iteration144/features.json');old=load(ROOT/'iteration144/predictions.json');pred={}
+    for key,configs in old.items():
+        if not key.endswith('/full'):continue
+        w=key[:-5];pred[w]={name:[dict(r,probabilities=dict(raw=predict_vector(cached[key][r['opaque']],m))) for r in configs['joint']] for name,m in models.items()};assert pred[w]['full']==configs['joint']
+    save(OUT/'predictions.json',pred);save(OUT/'predictions-freeze.json',dict(inputs={str(OUT/'predictions.json'):digest(OUT/'predictions.json')}));summary=evaluate(pred,anchors,{name:'source_sentence' for name in models});save(OUT/'summary.json',summary)
+    for w,r in summary.items():print(w,{n:(x['metrics']['correct'],len(x['decision_flips']),x['metrics']['nll']) for n,x in r.items()},flush=True)
+if __name__=='__main__':run()
