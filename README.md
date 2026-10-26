@@ -33,12 +33,19 @@ The [experiment tracker](docs/grammar_algorithm_proposals.md) preserves successe
 
 ## Progress
 
+### 2026-10-26: selective grammatical relations, limited reproducibility
+
+The strongest potential input is a shortlist of anonymous grammatical relations, with trained pair-ranking compatibility of **68–89%** across four author datasets and uneven gains beyond simple controls.
+Fixed diffusion repairs collapsed graph geometry, while local relations recover rare reference-pure Aquinas/Jerome pairs whose reliable recurrence and new-rule control validation remain unresolved.
+No exact nuclei or dependable named-POS restoration is established.
+See the [daily report](docs/progress/20261026.md#daily-summary) and separate [best shot today](docs/progress/20261026.md#best-shot-today).
+
 ### 2026-10-25: promising grammatical inputs
 
 A source-trained model selects **9/10 case-comparable pairs** in another Cicero passage, spanning 11 word types with 82.87% conditional case agreement, without target POS/case labels at inference.
-Its target AUC is **0.842**, and the gain [survives 199 shuffled-source-label controls](docs/grammar_case_source_labels_iteration181.md).
+Target AUC is **0.842**; [audits](docs/grammar_case_endpoint_sensitivity_iteration183.md) preserve the gain under source-label permutations, unseen training pairs, and all 53 endpoint omissions.
 Other preserved findings include context-specific case compatibility and [80–90% coarse grammatical membership in top-ten word lists across four datasets](docs/grammar_broad_source_authors_iteration159.md).
-These remain development findings, with same-author and lexical-overlap limits on the new model; **no named cases or lexical nuclei are restored**—see the [daily record](docs/progress/20261025.md).
+One negative training pair influences the shortlist (dropping it gives 5/10 even with [fixed scaling](docs/grammar_case_fixed_scaling_iteration184.md)); evidence remains same-author with shared vocabulary and **no named cases or lexical nuclei restored**.
 
 ### 2026-10-24: three potential grammatical inputs preserved
 

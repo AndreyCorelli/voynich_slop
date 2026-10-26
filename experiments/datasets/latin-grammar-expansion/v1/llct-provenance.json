@@ -1,0 +1,47 @@
+{
+  "slug": "llct",
+  "repo": "UD_Latin-LLCT",
+  "license": "CC-BY-SA-4.0",
+  "policy": "Supplemental development genre; anonymous/multiple scribes, not a single independent author",
+  "role": "supplemental_development",
+  "tag": "r2.17",
+  "commit": "df63d06c5a7788b457f50bf37526146e9225c27d",
+  "repository": "https://github.com/UniversalDependencies/UD_Latin-LLCT",
+  "files": [
+    {
+      "path": "data/latin-grammar-benchmark/llct-r2.17/LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-LLCT/df63d06c5a7788b457f50bf37526146e9225c27d/LICENSE.txt",
+      "bytes": 202,
+      "sha256": "899b1804a12ebc090b96339614eede1b64b686721b650a71430b55b5235f7f79",
+      "git_blob_sha1": "9af2e0b2f73cf29fe1f60cb6376b176d9c2ba846"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/llct-r2.17/README.md",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-LLCT/df63d06c5a7788b457f50bf37526146e9225c27d/README.md",
+      "bytes": 10753,
+      "sha256": "eb3daaa3c8d7e4f3d1ea222bdacef989553714c10f6ebf68cb2dd93e1e2789f8",
+      "git_blob_sha1": "68ab9aea2145ce3894ba4715aab8e2e413330ca4"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/llct-r2.17/la_llct-ud-dev.conllu",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-LLCT/df63d06c5a7788b457f50bf37526146e9225c27d/la_llct-ud-dev.conllu",
+      "bytes": 2357828,
+      "sha256": "040457f2e47265a5676c83ce236e1d625af41eda8f779812841e8ba84e28480c",
+      "git_blob_sha1": "190c534ec6d9fc0d3d0d09457c228be5c06c8942"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/llct-r2.17/la_llct-ud-test.conllu",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-LLCT/df63d06c5a7788b457f50bf37526146e9225c27d/la_llct-ud-test.conllu",
+      "bytes": 2345127,
+      "sha256": "81d9f57de66d83303ad4df54a60cd445ac089b50070d369831a632b4cf948e64",
+      "git_blob_sha1": "a709e215181608d0a6e41d25190e0640c8ec5298"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/llct-r2.17/la_llct-ud-train.conllu",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-LLCT/df63d06c5a7788b457f50bf37526146e9225c27d/la_llct-ud-train.conllu",
+      "bytes": 18830634,
+      "sha256": "8aabc8735c7a623a9e4820e13861a87459dd0fb5b2d238f0583854143526a643",
+      "git_blob_sha1": "1d14465f6d9241036de70b6ef21a614d7e36876a"
+    }
+  ]
+}

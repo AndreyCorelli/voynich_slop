@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-26",
+  "code_sha256": "4abde5035e4e7260e13804361ed6afb6ea65269009cf18afac1388d34ad96a53",
+  "policy": "Metadata/structural validation only: integer token IDs, 10-column row shape, MWT/empty IDs and sentence IDs. Never access FORM/LEMMA/UPOS/FEATS/HEAD/DEPREL fields or text comments; no model/graph/projection/evaluation. Roles fixed by README attribution and ID ranges, not outcomes. All Seneca and secure/attributed Dante labels reserved irrespective upstream train/dev/test. UDante Que/Egl/EpiXIII and ITTB mixedauthor concordances quarantined. LLCT supplemental genre not counted independent namedauthor. Existing PROIEL/Perseus inventoried only; their prior train/holdout reservations take precedence. No legacy heldout sentences or sealed raw works used as features.",
+  "upstream_policies": {
+    "ittb": "r2.17 README documented train sentence boundaries for SCG1–4; others quarantine",
+    "udante": "r2.17 README work/citation IDs and authorship caveats",
+    "circse": "r2.17 README and sent_id author/work prefixes",
+    "llct": "anonymous/multiple scribes, supplemental development"
+  },
+  "prior_exposure": "Aquinas/Dante/Tacitus appear in older project experiments/raw corpora; reserve means new annotation/current applicability-model embargo, not globally unseen authors. Seneca is absent from current Cicero model, but no global raw-library novelty claim."
+}

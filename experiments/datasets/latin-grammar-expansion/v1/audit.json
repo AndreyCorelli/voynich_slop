@@ -1,0 +1,15 @@
+{
+  "download_files_hash_and_git_blob_verified": 20,
+  "license_files_verified": 4,
+  "license_metadata_conflicts_flagged": [
+    "udante"
+  ],
+  "conllu_files_structurally_replayed": 17,
+  "new_sentence_role_records_verified": 39387,
+  "all_author_roles_disjoint": true,
+  "all_mixed_disputed_sections_quarantined": true,
+  "all_new_reserve_annotations_unprojected": true,
+  "token_label_fields_and_text_comments_not_inspected": true,
+  "all_original_holdout_metadata_unchanged": true,
+  "no_graphs_models_or_predictions_run": true
+}

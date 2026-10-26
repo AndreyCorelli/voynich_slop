@@ -1,0 +1,38 @@
+{
+  "ittb": {
+    "catalog_expected": "CC-BY-NC-SA-3.0",
+    "license_file_declares": "CC-BY-NC-SA-3.0",
+    "expected_matches_license_file": true,
+    "readme_declares_nc_sa_3": false,
+    "status": "consistent",
+    "license_path": "data/latin-grammar-benchmark/ittb-r2.17/LICENSE.txt",
+    "readme_path": "data/latin-grammar-benchmark/ittb-r2.17/README.md"
+  },
+  "udante": {
+    "catalog_expected": "CC-BY-NC-SA-3.0",
+    "license_file_declares": "CC-BY-SA-4.0",
+    "expected_matches_license_file": false,
+    "readme_declares_nc_sa_3": true,
+    "status": "unresolved_upstream_declaration_conflict",
+    "license_path": "data/latin-grammar-benchmark/udante-r2.17/LICENSE.txt",
+    "readme_path": "data/latin-grammar-benchmark/udante-r2.17/README.md"
+  },
+  "circse": {
+    "catalog_expected": "CC-BY-SA-4.0",
+    "license_file_declares": "CC-BY-SA-4.0",
+    "expected_matches_license_file": true,
+    "readme_declares_nc_sa_3": false,
+    "status": "consistent",
+    "license_path": "data/latin-grammar-benchmark/circse-r2.17/LICENSE.txt",
+    "readme_path": "data/latin-grammar-benchmark/circse-r2.17/README.md"
+  },
+  "llct": {
+    "catalog_expected": "CC-BY-SA-4.0",
+    "license_file_declares": "CC-BY-SA-4.0",
+    "expected_matches_license_file": true,
+    "readme_declares_nc_sa_3": false,
+    "status": "consistent",
+    "license_path": "data/latin-grammar-benchmark/llct-r2.17/LICENSE.txt",
+    "readme_path": "data/latin-grammar-benchmark/llct-r2.17/README.md"
+  }
+}

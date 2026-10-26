@@ -1,0 +1,47 @@
+{
+  "slug": "circse",
+  "repo": "UD_Latin-CIRCSE",
+  "license": "CC-BY-SA-4.0",
+  "policy": "Tacitus development; Seneca reserved evaluation; unknown metadata quarantined",
+  "role": "author_split",
+  "tag": "r2.17",
+  "commit": "13745972cb788304702f47afa8cf8d4619229408",
+  "repository": "https://github.com/UniversalDependencies/UD_Latin-CIRCSE",
+  "files": [
+    {
+      "path": "data/latin-grammar-benchmark/circse-r2.17/LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-CIRCSE/13745972cb788304702f47afa8cf8d4619229408/LICENSE.txt",
+      "bytes": 202,
+      "sha256": "899b1804a12ebc090b96339614eede1b64b686721b650a71430b55b5235f7f79",
+      "git_blob_sha1": "9af2e0b2f73cf29fe1f60cb6376b176d9c2ba846"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/circse-r2.17/README.md",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-CIRCSE/13745972cb788304702f47afa8cf8d4619229408/README.md",
+      "bytes": 9404,
+      "sha256": "70e09c1e12b3c2c861c3f32e01263cde1a6443f9f7a6bac953665d6c33c59d74",
+      "git_blob_sha1": "a027acc5e0739dc6f2ed44d1342d4aec9a6f70b6"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/circse-r2.17/la_circse-ud-dev.conllu",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-CIRCSE/13745972cb788304702f47afa8cf8d4619229408/la_circse-ud-dev.conllu",
+      "bytes": 162967,
+      "sha256": "dd4898786f07c10aa5d4f517ec8f9325e42337b95011672eaf337ff66b9b45d8",
+      "git_blob_sha1": "6107043208098b303df594ac503dbf1e5c69af35"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/circse-r2.17/la_circse-ud-test.conllu",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-CIRCSE/13745972cb788304702f47afa8cf8d4619229408/la_circse-ud-test.conllu",
+      "bytes": 1437321,
+      "sha256": "98b1ea612e20c5ff74c3c1aee44863833d6d378a055c0a53d5183f17a455629a",
+      "git_blob_sha1": "6a46b382ec559bfcb8c93c5ad7eed0317e439154"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/circse-r2.17/la_circse-ud-train.conllu",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-CIRCSE/13745972cb788304702f47afa8cf8d4619229408/la_circse-ud-train.conllu",
+      "bytes": 1596328,
+      "sha256": "81ea247fbf7121844e487ec50600dcb20d2168f329f77f9c23ac970c61d23639",
+      "git_blob_sha1": "e1104ac876cea3e22fa1c034817ff4e048b7c93d"
+    }
+  ]
+}

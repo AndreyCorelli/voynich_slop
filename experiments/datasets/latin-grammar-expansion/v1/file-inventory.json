@@ -1,0 +1,121 @@
+{
+  "data/latin-grammar-benchmark/ittb-r2.17/la_ittb-ud-dev.conllu": {
+    "sha256": "fd0b609a70f418dcbb47762b38c985ffd208a02d919b72d995836cf578ad032b",
+    "sentences": 2101,
+    "integer_token_rows": 29888,
+    "mwt_rows": 3,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/ittb-r2.17/la_ittb-ud-test.conllu": {
+    "sha256": "8c8d63ab7789537a4b38a2d06d3ad534ca227aa478afecf3049b286d93362149",
+    "sentences": 2101,
+    "integer_token_rows": 29842,
+    "mwt_rows": 2,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/ittb-r2.17/la_ittb-ud-train.conllu": {
+    "sha256": "c92da0a24bc74c2eaf8c13bd8a592e6777462c1aef0535cee6e46ce782fcb2cb",
+    "sentences": 22775,
+    "integer_token_rows": 390787,
+    "mwt_rows": 32,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/udante-r2.17/la_udante-ud-dev.conllu": {
+    "sha256": "37c1ad702e658acfc72339dda8bce303ed92a4a76d7bcb52bbf5eca6d6fe78ad",
+    "sentences": 376,
+    "integer_token_rows": 11616,
+    "mwt_rows": 66,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/udante-r2.17/la_udante-ud-test.conllu": {
+    "sha256": "77b96f0f6105c70226fe832a9e3b30067ef565bb9e390b2531c7f21766b85c22",
+    "sentences": 421,
+    "integer_token_rows": 13474,
+    "mwt_rows": 72,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/udante-r2.17/la_udante-ud-train.conllu": {
+    "sha256": "2f654d7dc2bf31bb317456f04fefa006f0c2a35d2b59012c227d2cd4b05b7be3",
+    "sentences": 926,
+    "integer_token_rows": 30463,
+    "mwt_rows": 129,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/circse-r2.17/la_circse-ud-dev.conllu": {
+    "sha256": "dd4898786f07c10aa5d4f517ec8f9325e42337b95011672eaf337ff66b9b45d8",
+    "sentences": 70,
+    "integer_token_rows": 1276,
+    "mwt_rows": 33,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/circse-r2.17/la_circse-ud-test.conllu": {
+    "sha256": "98b1ea612e20c5ff74c3c1aee44863833d6d378a055c0a53d5183f17a455629a",
+    "sentences": 832,
+    "integer_token_rows": 11130,
+    "mwt_rows": 325,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/circse-r2.17/la_circse-ud-train.conllu": {
+    "sha256": "81ea247fbf7121844e487ec50600dcb20d2168f329f77f9c23ac970c61d23639",
+    "sentences": 762,
+    "integer_token_rows": 12493,
+    "mwt_rows": 324,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/llct-r2.17/la_llct-ud-dev.conllu": {
+    "sha256": "040457f2e47265a5676c83ce236e1d625af41eda8f779812841e8ba84e28480c",
+    "sentences": 850,
+    "integer_token_rows": 24189,
+    "mwt_rows": 3,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/llct-r2.17/la_llct-ud-test.conllu": {
+    "sha256": "81d9f57de66d83303ad4df54a60cd445ac089b50070d369831a632b4cf948e64",
+    "sentences": 884,
+    "integer_token_rows": 24079,
+    "mwt_rows": 2,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/llct-r2.17/la_llct-ud-train.conllu": {
+    "sha256": "8aabc8735c7a623a9e4820e13861a87459dd0fb5b2d238f0583854143526a643",
+    "sentences": 7289,
+    "integer_token_rows": 194143,
+    "mwt_rows": 15,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/proiel-r2.17/la_proiel-ud-dev.conllu": {
+    "sha256": "54f014794181d09f3bcd02b45fb0f8aef6f46bc226397a5e12884098eacf57fc",
+    "sentences": 1233,
+    "integer_token_rows": 13917,
+    "mwt_rows": 0,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/proiel-r2.17/la_proiel-ud-test.conllu": {
+    "sha256": "35be241f1b5b47b66c2f222c611dfa80cd0ed9ec2e621fe352e8d4a1875183b4",
+    "sentences": 1260,
+    "integer_token_rows": 14091,
+    "mwt_rows": 0,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/proiel-r2.17/la_proiel-ud-train.conllu": {
+    "sha256": "010188e77944e87d959b578fb746b29c33c1b067dcc5652cbe13c60b40a6d0f6",
+    "sentences": 16196,
+    "integer_token_rows": 177558,
+    "mwt_rows": 0,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/perseus-r2.17/la_perseus-ud-test.conllu": {
+    "sha256": "27e1d5e508961953852cd9186e1a69d877bfb5004aab465f7b11dff009842095",
+    "sentences": 939,
+    "integer_token_rows": 10962,
+    "mwt_rows": 187,
+    "empty_rows": 0
+  },
+  "data/latin-grammar-benchmark/perseus-r2.17/la_perseus-ud-train.conllu": {
+    "sha256": "3189b6e1a17b867afd341ae8ff9892123c5447bd96f678fb5e33743a5aacfcaf",
+    "sentences": 1334,
+    "integer_token_rows": 18259,
+    "mwt_rows": 166,
+    "empty_rows": 0
+  }
+}

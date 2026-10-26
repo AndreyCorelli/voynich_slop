@@ -1,0 +1,332 @@
+[
+  {
+    "corpus": "circse",
+    "author": "Seneca",
+    "work": "Latin_SenecaYounger_Ag_poetry",
+    "role": "reserved_evaluation",
+    "sentences": 409,
+    "integer_token_rows": 5580,
+    "mwt_rows": 133,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "circse",
+    "author": "Seneca",
+    "work": "Latin_SenecaYounger_HercF_poetry",
+    "role": "reserved_evaluation",
+    "sentences": 555,
+    "integer_token_rows": 7714,
+    "mwt_rows": 216,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "circse",
+    "author": "Seneca",
+    "work": "Latin_SenecaYounger_Oedip_poetry",
+    "role": "reserved_evaluation",
+    "sentences": 401,
+    "integer_token_rows": 5931,
+    "mwt_rows": 167,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "circse",
+    "author": "Tacitus",
+    "work": "Germania",
+    "role": "development",
+    "sentences": 299,
+    "integer_token_rows": 5674,
+    "mwt_rows": 166,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "ittb",
+    "author": "Aquinas",
+    "work": "SCG1",
+    "role": "development",
+    "sentences": 4306,
+    "integer_token_rows": 61141,
+    "mwt_rows": 5,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "ittb",
+    "author": "Aquinas",
+    "work": "SCG2",
+    "role": "development",
+    "sentences": 5553,
+    "integer_token_rows": 88701,
+    "mwt_rows": 3,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "ittb",
+    "author": "Aquinas",
+    "work": "SCG3",
+    "role": "development",
+    "sentences": 7862,
+    "integer_token_rows": 127705,
+    "mwt_rows": 12,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "ittb",
+    "author": "Aquinas",
+    "work": "SCG4",
+    "role": "development",
+    "sentences": 5966,
+    "integer_token_rows": 97481,
+    "mwt_rows": 15,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "ittb",
+    "author": "mixed/unknown",
+    "work": "ITTB-forma-concordances-or-unregistered",
+    "role": "quarantine",
+    "sentences": 3290,
+    "integer_token_rows": 75489,
+    "mwt_rows": 2,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "llct",
+    "author": "anonymous/multiple scribes",
+    "work": "LLCT-charters",
+    "role": "supplemental_development",
+    "sentences": 9023,
+    "integer_token_rows": 242411,
+    "mwt_rows": 20,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "perseus",
+    "author": "Augustus",
+    "work": "phi1221.phi007",
+    "role": "legacy_existing_policy_only",
+    "sentences": 38,
+    "integer_token_rows": 713,
+    "mwt_rows": 0,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "perseus",
+    "author": "Caesar",
+    "work": "phi0448.phi001",
+    "role": "legacy_existing_policy_only",
+    "sentences": 24,
+    "integer_token_rows": 352,
+    "mwt_rows": 0,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "perseus",
+    "author": "Cicero",
+    "work": "phi0474.phi013",
+    "role": "legacy_existing_policy_only",
+    "sentences": 137,
+    "integer_token_rows": 1915,
+    "mwt_rows": 18,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "perseus",
+    "author": "Jerome",
+    "work": "tlg0031.tlg027",
+    "role": "legacy_existing_policy_only",
+    "sentences": 154,
+    "integer_token_rows": 2003,
+    "mwt_rows": 17,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "perseus",
+    "author": "Ovid",
+    "work": "phi0959.phi006",
+    "role": "legacy_existing_policy_only",
+    "sentences": 183,
+    "integer_token_rows": 2653,
+    "mwt_rows": 119,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "perseus",
+    "author": "Petronius",
+    "work": "phi0972.phi001",
+    "role": "legacy_existing_policy_only",
+    "sentences": 547,
+    "integer_token_rows": 5955,
+    "mwt_rows": 55,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "perseus",
+    "author": "Phaedrus",
+    "work": "phi0975.phi001",
+    "role": "legacy_existing_policy_only",
+    "sentences": 389,
+    "integer_token_rows": 4118,
+    "mwt_rows": 32,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "perseus",
+    "author": "Propertius",
+    "work": "phi0620.phi001",
+    "role": "legacy_existing_policy_only",
+    "sentences": 224,
+    "integer_token_rows": 2801,
+    "mwt_rows": 25,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "perseus",
+    "author": "Sallust",
+    "work": "phi0631.phi001",
+    "role": "legacy_existing_policy_only",
+    "sentences": 336,
+    "integer_token_rows": 4999,
+    "mwt_rows": 82,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "perseus",
+    "author": "Suetonius",
+    "work": "phi1348.abo012",
+    "role": "legacy_existing_policy_only",
+    "sentences": 109,
+    "integer_token_rows": 2066,
+    "mwt_rows": 1,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "perseus",
+    "author": "Tacitus",
+    "work": "phi1351.phi005",
+    "role": "legacy_existing_policy_only",
+    "sentences": 64,
+    "integer_token_rows": 867,
+    "mwt_rows": 1,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "perseus",
+    "author": "Vergil",
+    "work": "phi0690.phi003",
+    "role": "legacy_existing_policy_only",
+    "sentences": 68,
+    "integer_token_rows": 779,
+    "mwt_rows": 3,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "proiel",
+    "author": "Caesar",
+    "work": "Commentarii belli Gallici",
+    "role": "legacy_existing_policy_only",
+    "sentences": 1446,
+    "integer_token_rows": 27386,
+    "mwt_rows": 0,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "proiel",
+    "author": "Cicero",
+    "work": "De officiis",
+    "role": "legacy_existing_policy_only",
+    "sentences": 609,
+    "integer_token_rows": 11375,
+    "mwt_rows": 0,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "proiel",
+    "author": "Cicero",
+    "work": "Epistulae ad Atticum",
+    "role": "legacy_existing_policy_only",
+    "sentences": 3895,
+    "integer_token_rows": 45308,
+    "mwt_rows": 0,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "proiel",
+    "author": "Jerome",
+    "work": "Jerome's Vulgate",
+    "role": "legacy_existing_policy_only",
+    "sentences": 11784,
+    "integer_token_rows": 109517,
+    "mwt_rows": 0,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "proiel",
+    "author": "Palladius",
+    "work": "Opus agriculturae",
+    "role": "legacy_existing_policy_only",
+    "sentences": 955,
+    "integer_token_rows": 11980,
+    "mwt_rows": 0,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "udante",
+    "author": "Dante",
+    "work": "DVE",
+    "role": "reserved_evaluation",
+    "sentences": 421,
+    "integer_token_rows": 13474,
+    "mwt_rows": 72,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "udante",
+    "author": "Dante",
+    "work": "Mon",
+    "role": "reserved_evaluation",
+    "sentences": 682,
+    "integer_token_rows": 22728,
+    "mwt_rows": 79,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "udante",
+    "author": "Dante-attributed",
+    "work": "Epi",
+    "role": "reserved_evaluation",
+    "sentences": 230,
+    "integer_token_rows": 7293,
+    "mwt_rows": 57,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "udante",
+    "author": "mixed/disputed",
+    "work": "Egl",
+    "role": "quarantine",
+    "sentences": 111,
+    "integer_token_rows": 2620,
+    "mwt_rows": 44,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "udante",
+    "author": "mixed/disputed",
+    "work": "Epi",
+    "role": "quarantine",
+    "sentences": 146,
+    "integer_token_rows": 4323,
+    "mwt_rows": 9,
+    "empty_rows": 0
+  },
+  {
+    "corpus": "udante",
+    "author": "mixed/disputed",
+    "work": "Que",
+    "role": "quarantine",
+    "sentences": 133,
+    "integer_token_rows": 5115,
+    "mwt_rows": 6,
+    "empty_rows": 0
+  }
+]

@@ -1,0 +1,33 @@
+"""Source evidence and residual in-range error audit, all double omissions."""
+from benchmarks.grammar_case_double_omission_iteration188 import *
+OUT=ROOT/'iteration189'
+
+def run():
+    assert not OUT.exists();OUT.mkdir();(OUT/'proposal-design.md').write_text(Path('docs/grammar_algorithm_proposals.md').read_text())
+    paths=[Path(__file__),ROOT/'iteration188/verification-manifest.json',ROOT/'iteration188/omissions.json',ROOT/'iteration188/accepted-masks.json',ROOT/'iteration188/predictions.json',ROOT/'iteration188/selections.json',ROOT/'iteration188/summary.json',ROOT/'iteration180/features.json',ROOT/'iteration180/source-labels.json',ROOT/'iteration172/details.json']
+    save(OUT/'design-freeze.json',dict(inputs={str(p):digest(p) for p in paths},design='Explanation only, NO new fit/selection/filter. ALL1378 double omissions plus original. Source-only evidence: retained pair count, positive/negative count, prevalence, positive endpoint diversity and positive counts by each source endpoint; lost positives; compare retained min/max ranges for positive and negative source rows separately on all19 coordinates. Fixed target selected rows are188 rich leftentropy refilltop10, with noabstention reference. Freeze source evidence then label-free target geometry and selected predictions BEFORE consuming target truth. Each target feature coordinate inside positive-class range (tolerance1e-12), nearest standardized Euclidean distance to retained positive and negative source rows (fixed180 scales,19features), positive/negative/outside overall-box diagnostics, no thresholds chosen. Summaries predeclared source-positive-count bins <=9,10..12,13..15,>=16 and target outcome bins <=7,8,9applicable of10, all bins includingempty. Outcome grouping descriptive only after source freeze; compare all masks and distinct-mask counts, report ranges/means and positive-count histogram, selected noncase highconfidence/inrange counts and both no/entropy outcomes. No causal explanation from correlation, model repair or classreweighting adopted. Sameauthor/development/correlated masks and target-error hypothesis exposure. Independently recompute all evidence/distances/masks/cohorts/aggregates.'))
+    ff=load(ROOT/'iteration180/features.json');y=load(ROOT/'iteration180/source-labels.json');om=load(ROOT/'iteration188/omissions.json');evidence={};bounds={}
+    for v,o in om.items():
+        ix=o['training'];pos=[i for i in ix if y[i]];neg=[i for i in ix if not y[i]];counts=Counter(w for i in pos for w in [ff['earlier'][i]['a'],ff['earlier'][i]['b']]);evidence[v]=dict(training=len(ix),positives=len(pos),negatives=len(neg),positive_prevalence=len(pos)/len(ix),lost_positives=sum(y)-len(pos),positive_endpoint_types=len(counts),positive_incidence=dict(counts));bounds[v]={}
+        for label,indices in [('positive',pos),('negative',neg),('all',ix)]:
+            raw=np.array([ff['earlier'][i]['values'] for i in indices]);bounds[v][label]=dict(minimum=raw.min(0).tolist(),maximum=raw.max(0).tolist()) if indices else None
+    save(OUT/'source-evidence.json',evidence);save(OUT/'source-bounds.json',bounds);save(OUT/'source-freeze.json',dict(inputs={str(OUT/n):digest(OUT/n) for n in ['source-evidence.json','source-bounds.json']}))
+    scales=np.array(load(ROOT/'iteration180/models.json')['rich']['scale']);target=np.array([r['values'] for r in ff['replication']]);geometry={};selected=load(ROOT/'iteration188/selections.json');pred=load(ROOT/'iteration188/predictions.json')
+    for v,o in om.items():
+        pos=[i for i in o['training'] if y[i]];neg=[i for i in o['training'] if not y[i]];geometry[v]=[]
+        for i in selected[v]['left_entropy']['rich']['refill_top10']:
+            point=target[i];inside={label:((point>=np.array(b['minimum'])-1e-12)&(point<=np.array(b['maximum'])+1e-12)).tolist() if b else None for label,b in bounds[v].items()};dist={label:float(np.min(np.sqrt(np.sum(((np.array([ff['earlier'][j]['values'] for j in ix])-point)/scales)**2,axis=1)))) if ix else None for label,ix in [('positive',pos),('negative',neg)]};geometry[v].append(dict(index=i,prediction=pred[v]['rich'][i],inside=inside,positive_distance=dist['positive'],negative_distance=dist['negative']))
+    gzsave(OUT/'selected-geometry.json.gz',geometry);save(OUT/'geometry-freeze.json',dict(inputs={str(OUT/'selected-geometry.json.gz'):digest(OUT/'selected-geometry.json.gz')}))
+    rr=load(ROOT/'iteration172/details.json')['replication']['original']['all'];truth=[int(r['case_occurrence_pairs']>0) for r in rr];prior=load(ROOT/'iteration188/summary.json');rows={}
+    for v,ev in evidence.items():
+        gg=geometry[v];noncase=[r for r in gg if not truth[r['index']]];app=[r for r in gg if truth[r['index']]];rows[v]=dict(**ev,applicable=prior[v]['left_entropy']['arms']['rich']['lists']['refill_top10']['case_edges'],without_abstention=prior[v]['none']['arms']['rich']['lists']['refill_top10']['case_edges'],applicable_lost=prior[v]['left_entropy']['coverage']['applicable_lost'],noncase=len(noncase),noncase_probability_at_least_half=sum(r['prediction']>=.5 for r in noncase),noncase_inside_all_coordinates=sum(all(r['inside']['all']) for r in noncase),noncase_inside_positive_box=sum(all(r['inside']['positive']) for r in noncase),noncase_nearer_positive=sum(r['positive_distance']<r['negative_distance'] for r in noncase),applicable_inside_positive_box=sum(all(r['inside']['positive']) for r in app))
+    save(OUT/'rows.json',rows);cohorts={'all':[v for v in rows if v!='original']}
+    for name,lo,hi in [('positive_le9',0,9),('positive_10_12',10,12),('positive_13_15',13,15),('positive_ge16',16,52)]:cohorts[name]=[v for v in cohorts['all'] if lo<=rows[v]['positives']<=hi]
+    for name,lo,hi in [('weak_le7',0,7),('applicable8',8,8),('applicable9',9,9)]:cohorts[name]=[v for v in cohorts['all'] if lo<=rows[v]['applicable']<=hi]
+    summary={};fields=['training','positives','positive_prevalence','positive_endpoint_types','applicable','without_abstention','applicable_lost','noncase','noncase_probability_at_least_half','noncase_inside_all_coordinates','noncase_inside_positive_box','noncase_nearer_positive']
+    for name,views in cohorts.items():
+        summary[name]=dict(n=len(views),distinct_training_masks=len({tuple(om[v]['training']) for v in views}),positive_count_histogram=dict(Counter(str(rows[v]['positives']) for v in views)),fields={})
+        for field in fields:
+            values=[rows[v][field] for v in views];summary[name]['fields'][field]=dict(min=min(values) if values else None,max=max(values) if values else None,mean=sum(values)/len(values) if values else None)
+    save(OUT/'cohorts.json',cohorts);save(OUT/'summary.json',summary);print(json.dumps(summary),flush=True)
+if __name__=='__main__':run()

@@ -1,0 +1,193 @@
+{
+  "date": "2026-10-26",
+  "sources": [
+    {
+      "slug": "ittb",
+      "repo": "UD_Latin-ITTB",
+      "license": "CC-BY-NC-SA-3.0",
+      "policy": "Aquinas SCG development; mixed-author concordances quarantined",
+      "role": "development_with_quarantine",
+      "tag": "r2.17",
+      "commit": "9d01db4e4d9b194ab1421a0a6fd4fa5b052c640f",
+      "repository": "https://github.com/UniversalDependencies/UD_Latin-ITTB",
+      "files": [
+        {
+          "path": "data/latin-grammar-benchmark/ittb-r2.17/LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-ITTB/9d01db4e4d9b194ab1421a0a6fd4fa5b052c640f/LICENSE.txt",
+          "bytes": 19805,
+          "sha256": "3e07ac7ee7b02daa2a88e8bb1e825d6a580aababe1a7084c40cd0664d6231fb0",
+          "git_blob_sha1": "9267a53df1a73406cf972bf1b0b1dd1f51a8af5e"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/ittb-r2.17/README.md",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-ITTB/9d01db4e4d9b194ab1421a0a6fd4fa5b052c640f/README.md",
+          "bytes": 14101,
+          "sha256": "379c2db2b78a932b6e41ec3314ef5694e4e9f83bbea5e8a0c124bca66f7934c3",
+          "git_blob_sha1": "3bc945e9ccfe9fbc98434c5c84b09dbe104d68f2"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/ittb-r2.17/la_ittb-ud-dev.conllu",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-ITTB/9d01db4e4d9b194ab1421a0a6fd4fa5b052c640f/la_ittb-ud-dev.conllu",
+          "bytes": 3197599,
+          "sha256": "fd0b609a70f418dcbb47762b38c985ffd208a02d919b72d995836cf578ad032b",
+          "git_blob_sha1": "72d7eda515ac0d73baa0cf15e2b91874168a6172"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/ittb-r2.17/la_ittb-ud-test.conllu",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-ITTB/9d01db4e4d9b194ab1421a0a6fd4fa5b052c640f/la_ittb-ud-test.conllu",
+          "bytes": 3184528,
+          "sha256": "8c8d63ab7789537a4b38a2d06d3ad534ca227aa478afecf3049b286d93362149",
+          "git_blob_sha1": "7ba93a3ad5bcdce33846e8f075fbbbaf247e23c5"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/ittb-r2.17/la_ittb-ud-train.conllu",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-ITTB/9d01db4e4d9b194ab1421a0a6fd4fa5b052c640f/la_ittb-ud-train.conllu",
+          "bytes": 41138407,
+          "sha256": "c92da0a24bc74c2eaf8c13bd8a592e6777462c1aef0535cee6e46ce782fcb2cb",
+          "git_blob_sha1": "a514b50a980447d23d529e309204ed8ef69b8501"
+        }
+      ]
+    },
+    {
+      "slug": "udante",
+      "repo": "UD_Latin-UDante",
+      "license": "CC-BY-NC-SA-3.0",
+      "policy": "All annotation labels reserved; disputed authorship and Giovanni del Virgilio not counted as independent Dante texts",
+      "role": "reserved_evaluation",
+      "tag": "r2.17",
+      "commit": "06fbba3dcab84c0b577bc61e3696e3238141360d",
+      "repository": "https://github.com/UniversalDependencies/UD_Latin-UDante",
+      "files": [
+        {
+          "path": "data/latin-grammar-benchmark/udante-r2.17/LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-UDante/06fbba3dcab84c0b577bc61e3696e3238141360d/LICENSE.txt",
+          "bytes": 202,
+          "sha256": "899b1804a12ebc090b96339614eede1b64b686721b650a71430b55b5235f7f79",
+          "git_blob_sha1": "9af2e0b2f73cf29fe1f60cb6376b176d9c2ba846"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/udante-r2.17/README.md",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-UDante/06fbba3dcab84c0b577bc61e3696e3238141360d/README.md",
+          "bytes": 12960,
+          "sha256": "cf6be577c5a44470ed826b673f9b7e8acd798ee0738279805ae1b3814ca1ed00",
+          "git_blob_sha1": "738094ab200d67f466c94385f20fbf6e7626e8ea"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/udante-r2.17/la_udante-ud-dev.conllu",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-UDante/06fbba3dcab84c0b577bc61e3696e3238141360d/la_udante-ud-dev.conllu",
+          "bytes": 1153042,
+          "sha256": "37c1ad702e658acfc72339dda8bce303ed92a4a76d7bcb52bbf5eca6d6fe78ad",
+          "git_blob_sha1": "266dbc83d1c859d17395ae4a50fb7a101c464749"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/udante-r2.17/la_udante-ud-test.conllu",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-UDante/06fbba3dcab84c0b577bc61e3696e3238141360d/la_udante-ud-test.conllu",
+          "bytes": 1319506,
+          "sha256": "77b96f0f6105c70226fe832a9e3b30067ef565bb9e390b2531c7f21766b85c22",
+          "git_blob_sha1": "ab44d5d6f44ffb8cfab31889693d1979c27451a8"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/udante-r2.17/la_udante-ud-train.conllu",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-UDante/06fbba3dcab84c0b577bc61e3696e3238141360d/la_udante-ud-train.conllu",
+          "bytes": 3006800,
+          "sha256": "2f654d7dc2bf31bb317456f04fefa006f0c2a35d2b59012c227d2cd4b05b7be3",
+          "git_blob_sha1": "b2992623fc751bd781a33c7b3c4a496bb02a8bfd"
+        }
+      ]
+    },
+    {
+      "slug": "circse",
+      "repo": "UD_Latin-CIRCSE",
+      "license": "CC-BY-SA-4.0",
+      "policy": "Tacitus development; Seneca reserved evaluation; unknown metadata quarantined",
+      "role": "author_split",
+      "tag": "r2.17",
+      "commit": "13745972cb788304702f47afa8cf8d4619229408",
+      "repository": "https://github.com/UniversalDependencies/UD_Latin-CIRCSE",
+      "files": [
+        {
+          "path": "data/latin-grammar-benchmark/circse-r2.17/LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-CIRCSE/13745972cb788304702f47afa8cf8d4619229408/LICENSE.txt",
+          "bytes": 202,
+          "sha256": "899b1804a12ebc090b96339614eede1b64b686721b650a71430b55b5235f7f79",
+          "git_blob_sha1": "9af2e0b2f73cf29fe1f60cb6376b176d9c2ba846"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/circse-r2.17/README.md",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-CIRCSE/13745972cb788304702f47afa8cf8d4619229408/README.md",
+          "bytes": 9404,
+          "sha256": "70e09c1e12b3c2c861c3f32e01263cde1a6443f9f7a6bac953665d6c33c59d74",
+          "git_blob_sha1": "a027acc5e0739dc6f2ed44d1342d4aec9a6f70b6"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/circse-r2.17/la_circse-ud-dev.conllu",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-CIRCSE/13745972cb788304702f47afa8cf8d4619229408/la_circse-ud-dev.conllu",
+          "bytes": 162967,
+          "sha256": "dd4898786f07c10aa5d4f517ec8f9325e42337b95011672eaf337ff66b9b45d8",
+          "git_blob_sha1": "6107043208098b303df594ac503dbf1e5c69af35"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/circse-r2.17/la_circse-ud-test.conllu",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-CIRCSE/13745972cb788304702f47afa8cf8d4619229408/la_circse-ud-test.conllu",
+          "bytes": 1437321,
+          "sha256": "98b1ea612e20c5ff74c3c1aee44863833d6d378a055c0a53d5183f17a455629a",
+          "git_blob_sha1": "6a46b382ec559bfcb8c93c5ad7eed0317e439154"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/circse-r2.17/la_circse-ud-train.conllu",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-CIRCSE/13745972cb788304702f47afa8cf8d4619229408/la_circse-ud-train.conllu",
+          "bytes": 1596328,
+          "sha256": "81ea247fbf7121844e487ec50600dcb20d2168f329f77f9c23ac970c61d23639",
+          "git_blob_sha1": "e1104ac876cea3e22fa1c034817ff4e048b7c93d"
+        }
+      ]
+    },
+    {
+      "slug": "llct",
+      "repo": "UD_Latin-LLCT",
+      "license": "CC-BY-SA-4.0",
+      "policy": "Supplemental development genre; anonymous/multiple scribes, not a single independent author",
+      "role": "supplemental_development",
+      "tag": "r2.17",
+      "commit": "df63d06c5a7788b457f50bf37526146e9225c27d",
+      "repository": "https://github.com/UniversalDependencies/UD_Latin-LLCT",
+      "files": [
+        {
+          "path": "data/latin-grammar-benchmark/llct-r2.17/LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-LLCT/df63d06c5a7788b457f50bf37526146e9225c27d/LICENSE.txt",
+          "bytes": 202,
+          "sha256": "899b1804a12ebc090b96339614eede1b64b686721b650a71430b55b5235f7f79",
+          "git_blob_sha1": "9af2e0b2f73cf29fe1f60cb6376b176d9c2ba846"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/llct-r2.17/README.md",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-LLCT/df63d06c5a7788b457f50bf37526146e9225c27d/README.md",
+          "bytes": 10753,
+          "sha256": "eb3daaa3c8d7e4f3d1ea222bdacef989553714c10f6ebf68cb2dd93e1e2789f8",
+          "git_blob_sha1": "68ab9aea2145ce3894ba4715aab8e2e413330ca4"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/llct-r2.17/la_llct-ud-dev.conllu",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-LLCT/df63d06c5a7788b457f50bf37526146e9225c27d/la_llct-ud-dev.conllu",
+          "bytes": 2357828,
+          "sha256": "040457f2e47265a5676c83ce236e1d625af41eda8f779812841e8ba84e28480c",
+          "git_blob_sha1": "190c534ec6d9fc0d3d0d09457c228be5c06c8942"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/llct-r2.17/la_llct-ud-test.conllu",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-LLCT/df63d06c5a7788b457f50bf37526146e9225c27d/la_llct-ud-test.conllu",
+          "bytes": 2345127,
+          "sha256": "81d9f57de66d83303ad4df54a60cd445ac089b50070d369831a632b4cf948e64",
+          "git_blob_sha1": "a709e215181608d0a6e41d25190e0640c8ec5298"
+        },
+        {
+          "path": "data/latin-grammar-benchmark/llct-r2.17/la_llct-ud-train.conllu",
+          "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-LLCT/df63d06c5a7788b457f50bf37526146e9225c27d/la_llct-ud-train.conllu",
+          "bytes": 18830634,
+          "sha256": "8aabc8735c7a623a9e4820e13861a87459dd0fb5b2d238f0583854143526a643",
+          "git_blob_sha1": "1d14465f6d9241036de70b6ef21a614d7e36876a"
+        }
+      ]
+    }
+  ]
+}

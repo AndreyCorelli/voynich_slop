@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-26",
+  "tag": "r2.17",
+  "catalog": [
+    {
+      "slug": "ittb",
+      "repo": "UD_Latin-ITTB",
+      "license": "CC-BY-NC-SA-3.0",
+      "policy": "Aquinas SCG development; mixed-author concordances quarantined",
+      "role": "development_with_quarantine"
+    },
+    {
+      "slug": "udante",
+      "repo": "UD_Latin-UDante",
+      "license": "CC-BY-NC-SA-3.0",
+      "policy": "All annotation labels reserved; disputed authorship and Giovanni del Virgilio not counted as independent Dante texts",
+      "role": "reserved_evaluation"
+    },
+    {
+      "slug": "circse",
+      "repo": "UD_Latin-CIRCSE",
+      "license": "CC-BY-SA-4.0",
+      "policy": "Tacitus development; Seneca reserved evaluation; unknown metadata quarantined",
+      "role": "author_split"
+    },
+    {
+      "slug": "llct",
+      "repo": "UD_Latin-LLCT",
+      "license": "CC-BY-SA-4.0",
+      "policy": "Supplemental development genre; anonymous/multiple scribes, not a single independent author",
+      "role": "supplemental_development"
+    }
+  ],
+  "collector_sha256": "9f276c320449edb93b8e683fe9c7a393b2a28265415dd296cf837f16dd3766ea",
+  "scope": "Collection only; no inference, models, graph projection, case/POS label distributions or evaluation. Reserve old Ammianus/Quintilian/200-sentence holdout unchanged. New reserve means annotation/model evaluation embargo; older raw-author exposure disclosed separately. Structure/ID counts and headers only may be inventoried; no FORM/text emitted."
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "ittb",
+  "repo": "UD_Latin-ITTB",
+  "license": "CC-BY-NC-SA-3.0",
+  "policy": "Aquinas SCG development; mixed-author concordances quarantined",
+  "role": "development_with_quarantine",
+  "tag": "r2.17",
+  "commit": "9d01db4e4d9b194ab1421a0a6fd4fa5b052c640f",
+  "repository": "https://github.com/UniversalDependencies/UD_Latin-ITTB",
+  "files": [
+    {
+      "path": "data/latin-grammar-benchmark/ittb-r2.17/LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-ITTB/9d01db4e4d9b194ab1421a0a6fd4fa5b052c640f/LICENSE.txt",
+      "bytes": 19805,
+      "sha256": "3e07ac7ee7b02daa2a88e8bb1e825d6a580aababe1a7084c40cd0664d6231fb0",
+      "git_blob_sha1": "9267a53df1a73406cf972bf1b0b1dd1f51a8af5e"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/ittb-r2.17/README.md",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-ITTB/9d01db4e4d9b194ab1421a0a6fd4fa5b052c640f/README.md",
+      "bytes": 14101,
+      "sha256": "379c2db2b78a932b6e41ec3314ef5694e4e9f83bbea5e8a0c124bca66f7934c3",
+      "git_blob_sha1": "3bc945e9ccfe9fbc98434c5c84b09dbe104d68f2"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/ittb-r2.17/la_ittb-ud-dev.conllu",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-ITTB/9d01db4e4d9b194ab1421a0a6fd4fa5b052c640f/la_ittb-ud-dev.conllu",
+      "bytes": 3197599,
+      "sha256": "fd0b609a70f418dcbb47762b38c985ffd208a02d919b72d995836cf578ad032b",
+      "git_blob_sha1": "72d7eda515ac0d73baa0cf15e2b91874168a6172"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/ittb-r2.17/la_ittb-ud-test.conllu",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-ITTB/9d01db4e4d9b194ab1421a0a6fd4fa5b052c640f/la_ittb-ud-test.conllu",
+      "bytes": 3184528,
+      "sha256": "8c8d63ab7789537a4b38a2d06d3ad534ca227aa478afecf3049b286d93362149",
+      "git_blob_sha1": "7ba93a3ad5bcdce33846e8f075fbbbaf247e23c5"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/ittb-r2.17/la_ittb-ud-train.conllu",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-ITTB/9d01db4e4d9b194ab1421a0a6fd4fa5b052c640f/la_ittb-ud-train.conllu",
+      "bytes": 41138407,
+      "sha256": "c92da0a24bc74c2eaf8c13bd8a592e6777462c1aef0535cee6e46ce782fcb2cb",
+      "git_blob_sha1": "a514b50a980447d23d529e309204ed8ef69b8501"
+    }
+  ]
+}

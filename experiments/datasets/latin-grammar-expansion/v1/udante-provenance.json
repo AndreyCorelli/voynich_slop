@@ -1,0 +1,47 @@
+{
+  "slug": "udante",
+  "repo": "UD_Latin-UDante",
+  "license": "CC-BY-NC-SA-3.0",
+  "policy": "All annotation labels reserved; disputed authorship and Giovanni del Virgilio not counted as independent Dante texts",
+  "role": "reserved_evaluation",
+  "tag": "r2.17",
+  "commit": "06fbba3dcab84c0b577bc61e3696e3238141360d",
+  "repository": "https://github.com/UniversalDependencies/UD_Latin-UDante",
+  "files": [
+    {
+      "path": "data/latin-grammar-benchmark/udante-r2.17/LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-UDante/06fbba3dcab84c0b577bc61e3696e3238141360d/LICENSE.txt",
+      "bytes": 202,
+      "sha256": "899b1804a12ebc090b96339614eede1b64b686721b650a71430b55b5235f7f79",
+      "git_blob_sha1": "9af2e0b2f73cf29fe1f60cb6376b176d9c2ba846"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/udante-r2.17/README.md",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-UDante/06fbba3dcab84c0b577bc61e3696e3238141360d/README.md",
+      "bytes": 12960,
+      "sha256": "cf6be577c5a44470ed826b673f9b7e8acd798ee0738279805ae1b3814ca1ed00",
+      "git_blob_sha1": "738094ab200d67f466c94385f20fbf6e7626e8ea"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/udante-r2.17/la_udante-ud-dev.conllu",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-UDante/06fbba3dcab84c0b577bc61e3696e3238141360d/la_udante-ud-dev.conllu",
+      "bytes": 1153042,
+      "sha256": "37c1ad702e658acfc72339dda8bce303ed92a4a76d7bcb52bbf5eca6d6fe78ad",
+      "git_blob_sha1": "266dbc83d1c859d17395ae4a50fb7a101c464749"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/udante-r2.17/la_udante-ud-test.conllu",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-UDante/06fbba3dcab84c0b577bc61e3696e3238141360d/la_udante-ud-test.conllu",
+      "bytes": 1319506,
+      "sha256": "77b96f0f6105c70226fe832a9e3b30067ef565bb9e390b2531c7f21766b85c22",
+      "git_blob_sha1": "ab44d5d6f44ffb8cfab31889693d1979c27451a8"
+    },
+    {
+      "path": "data/latin-grammar-benchmark/udante-r2.17/la_udante-ud-train.conllu",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-UDante/06fbba3dcab84c0b577bc61e3696e3238141360d/la_udante-ud-train.conllu",
+      "bytes": 3006800,
+      "sha256": "2f654d7dc2bf31bb317456f04fefa006f0c2a35d2b59012c227d2cd4b05b7be3",
+      "git_blob_sha1": "b2992623fc751bd781a33c7b3c4a496bb02a8bfd"
+    }
+  ]
+}

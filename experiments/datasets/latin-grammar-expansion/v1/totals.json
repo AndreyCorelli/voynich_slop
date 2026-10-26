@@ -1,0 +1,53 @@
+{
+  "new_treebanks": 4,
+  "new_sentence_records": 39387,
+  "new_integer_token_rows": 773380,
+  "existing_treebanks": 2,
+  "existing_integer_token_rows": 234787,
+  "total_integer_token_rows": 1008167,
+  "legacy_named_author_groups": [
+    "Augustus",
+    "Caesar",
+    "Cicero",
+    "Jerome",
+    "Ovid",
+    "Palladius",
+    "Petronius",
+    "Phaedrus",
+    "Propertius",
+    "Sallust",
+    "Suetonius",
+    "Tacitus",
+    "Vergil"
+  ],
+  "new_principal_named_author_groups": [
+    "Aquinas",
+    "Dante",
+    "Seneca",
+    "Tacitus"
+  ],
+  "new_named_authors_relative_to_existing_treebanks": [
+    "Aquinas",
+    "Dante",
+    "Seneca"
+  ],
+  "tokens_are": "Syntactic integer-ID rows, including punctuation/split clitics; not normalized model-word count",
+  "per_role": {
+    "development": {
+      "sentences": 23986,
+      "integer_token_rows": 380702
+    },
+    "supplemental_development": {
+      "sentences": 9023,
+      "integer_token_rows": 242411
+    },
+    "reserved_evaluation": {
+      "sentences": 2698,
+      "integer_token_rows": 62720
+    },
+    "quarantine": {
+      "sentences": 3680,
+      "integer_token_rows": 87547
+    }
+  }
+}

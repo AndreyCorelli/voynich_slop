@@ -1,0 +1,11 @@
+{
+  "independent_structural_provenance_audit": "passed",
+  "new_annotation_rows": 773380,
+  "new_sentence_role_records": 39387,
+  "model_or_label_evaluation_run": false,
+  "old_reservations_unchanged": true,
+  "license_declaration_conflict": "UDante README vs LICENSE preserved and flagged",
+  "legacy_source_registry_issue": "corrected in new inventory only; historical impact audit pending",
+  "cross_text_form_deduplication": "not performed; reserved FORM unprojected",
+  "broader_tests_rerun": false
+}
